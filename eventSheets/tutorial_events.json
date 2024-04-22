@@ -1,0 +1,581 @@
+{
+	"name": "tutorial_events",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "GAME_tutorialSeen",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 841384154940322
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "GLOBAL"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 709676819237175
+				}
+			],
+			"actions": [
+				{
+					"id": "set-timeline-time-by-tags",
+					"objectClass": "TimelineController",
+					"sid": 326079582715934,
+					"parameters": {
+						"tags": "\"tutorial\"",
+						"time": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 446662216051206,
+					"parameters": {
+						"variable": "MENU_current",
+						"value": "\"Tutorial\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 821456549481694,
+					"parameters": {
+						"variable": "GAME_inMenu",
+						"value": "true"
+					}
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "tutorials",
+					"sid": 131082775885262
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "devil",
+					"sid": 982538809205597,
+					"parameters": {
+						"animation": "\"tbag\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "play-timeline",
+					"objectClass": "TimelineController",
+					"sid": 587732014866862,
+					"parameters": {
+						"timeline": "tutorial",
+						"tags": "\"tutorial\""
+					}
+				}
+			],
+			"sid": 354736139283597
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 169422707740880,
+					"parameters": {
+						"first-value": "TimelineController.Value(\"tutorial\", \"tutorial\")",
+						"comparison": 5,
+						"second-value": "1"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 702333862522036
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "textBig",
+					"sid": 525394077600133,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 887146610188835,
+					"parameters": {
+						"audio-file": "menu",
+						"loop": "not-looping",
+						"volume": "log10(SETTING_soundVolume)*20",
+						"stereo-pan": "0",
+						"tag-optional": "\"sound\""
+					}
+				}
+			],
+			"sid": 485182939445015
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 535419041184295,
+					"parameters": {
+						"first-value": "TimelineController.Value(\"tutorial\", \"tutorial\")",
+						"comparison": 5,
+						"second-value": "2"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 476928250102923
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 306988273100060,
+					"parameters": {
+						"layer": "\"Step1\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 946490159709111,
+					"parameters": {
+						"audio-file": "click",
+						"loop": "not-looping",
+						"volume": "log10(SETTING_soundVolume)*20",
+						"stereo-pan": "0",
+						"tag-optional": "\"sound\""
+					}
+				}
+			],
+			"sid": 886014357483360
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 529756109339027,
+					"parameters": {
+						"first-value": "TimelineController.Value(\"tutorial\", \"tutorial\")",
+						"comparison": 5,
+						"second-value": "3"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 647819568303784
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 779379390960311,
+					"parameters": {
+						"layer": "\"Step2\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 237475235225801,
+					"parameters": {
+						"audio-file": "click",
+						"loop": "not-looping",
+						"volume": "log10(SETTING_soundVolume)*20",
+						"stereo-pan": "0",
+						"tag-optional": "\"sound\""
+					}
+				}
+			],
+			"sid": 116107606493590
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 574645043979083,
+					"parameters": {
+						"first-value": "TimelineController.Value(\"tutorial\", \"tutorial\")",
+						"comparison": 5,
+						"second-value": "4"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 579515826848870
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 626496034679081,
+					"parameters": {
+						"layer": "\"Step3\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 730821349847262,
+					"parameters": {
+						"audio-file": "click",
+						"loop": "not-looping",
+						"volume": "log10(SETTING_soundVolume)*20",
+						"stereo-pan": "0",
+						"tag-optional": "\"sound\""
+					}
+				}
+			],
+			"sid": 224572084516351
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 386577360499455,
+					"parameters": {
+						"first-value": "TimelineController.Value(\"tutorial\", \"tutorial\")",
+						"comparison": 5,
+						"second-value": "5"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 380909192492121
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 100418400178038,
+					"parameters": {
+						"layer": "\"MenuTutorial\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"callFunction": "menuInit",
+					"sid": 496848962886026,
+					"parameters": [
+						"0"
+					]
+				}
+			],
+			"sid": 281775061426900
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timeline-finished-by-tags",
+					"objectClass": "TimelineController",
+					"sid": 940720636714137,
+					"parameters": {
+						"tags": "\"menuFadeOut\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "textBig",
+					"sid": 718698134662405,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 202562186561143,
+					"parameters": {
+						"layer": "\"Step1\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 818608310741758,
+					"parameters": {
+						"layer": "\"Step2\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 861860646330775,
+					"parameters": {
+						"layer": "\"Step3\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 281599726260837,
+					"parameters": {
+						"layer": "\"Step3\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 306881628567990,
+					"parameters": {
+						"layer": "\"MenuTutorial\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 224451212038925,
+					"parameters": {
+						"variable": "GAME_inMenu",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 784118880102654,
+					"parameters": {
+						"variable": "GAME_tutorialSeen",
+						"value": "true"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 155510840282110,
+					"parameters": {
+						"layout": "game"
+					}
+				}
+			],
+			"sid": 700949199954578
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 465614886406815,
+					"parameters": {
+						"key": 13
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 797838872922013,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [],
+			"sid": 837693434361090,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 154855973646150,
+							"parameters": {
+								"tags": "\"menuFadeIn\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 671048509652145,
+							"parameters": {
+								"tags": "\"menuFadeOut\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 658108493927864,
+							"parameters": {
+								"variable": "MENU_selected",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 866830164143188,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 129124757819235,
+									"parameters": {
+										"variable": "MENU_current",
+										"comparison": 0,
+										"value": "\"Tutorial\""
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 541303729099301,
+									"parameters": {
+										"first-value": "TimelineController.Value(\"tutorial\", \"tutorial\")",
+										"comparison": 5,
+										"second-value": "5"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 620510297757828,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Okay"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 896609195707843,
+											"parameters": {
+												"variable": "MENU_option",
+												"comparison": 0,
+												"value": "0"
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 790293775208369,
+											"parameters": {
+												"variable": "MENU_selected"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 644171013726438,
+											"parameters": {
+												"variable": "MENU_selected",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 129009899433452,
+											"parameters": {
+												"variable": "GAME_inMenu",
+												"value": "false"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 811303730356737,
+											"parameters": {
+												"audio-file": "click",
+												"loop": "not-looping",
+												"volume": "log10(SETTING_soundVolume)*20",
+												"stereo-pan": "0",
+												"tag-optional": "\"sound\""
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "menuFade",
+											"sid": 416806938988637
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 309958394057814,
+											"parameters": {
+												"object-to-create": "menuFade",
+												"layer": "\"Fade\"",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-instance",
+											"objectClass": "TimelineController",
+											"sid": 337728892391181,
+											"parameters": {
+												"object-class": "menuFade",
+												"track-id": "\"menuFadeOut\""
+											}
+										},
+										{
+											"id": "play-timeline",
+											"objectClass": "TimelineController",
+											"sid": 311590104554356,
+											"parameters": {
+												"timeline": "menuFadeOut",
+												"tags": "\"menuFadeOut\""
+											}
+										}
+									],
+									"sid": 471871089454118
+								}
+							]
+						}
+					]
+				}
+			],
+			"isOrBlock": true
+		}
+	],
+	"sid": 209609980043533
+}
