@@ -1,5 +1,5 @@
 {
-	"name": "terrain",
+	"name": "objects",
 	"plugin-id": "Sprite",
 	"sid": 684906662486224,
 	"instanceVariables": [
@@ -20,26 +20,10 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"courthouseFront",
-		"courthouseBack",
-		"barBack",
-		"schoolBack",
-		"schoolFront",
-		"shopBack",
-		"shopFront",
-		"barFront",
-		"apartmentFront",
-		"apartmentBack",
-		"mechanic",
-		"shopMiddle",
 		"car",
-		"manhole",
 		"trashCan",
 		"dumpster",
 		"tree",
-		"barrel",
-		"table",
-		"cake",
-		"gunFloor"
+		"barrel"
 	]
 }

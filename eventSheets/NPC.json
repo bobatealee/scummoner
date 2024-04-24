@@ -8,11 +8,6 @@
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 885793550295629
-				},
-				{
-					"id": "on-load-complete",
-					"objectClass": "System",
-					"sid": 989206249444037
 				}
 			],
 			"actions": [
@@ -278,6 +273,14 @@
 									"parameters": {
 										"visibility": "invisible"
 									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "speechBubble",
+									"sid": 574247163017439,
+									"parameters": {
+										"y": "npcs.BBoxTop"
+									}
 								}
 							],
 							"sid": 583169259509400,
@@ -285,8 +288,7 @@
 						}
 					]
 				}
-			],
-			"isOrBlock": true
+			]
 		},
 		{
 			"eventType": "group",
@@ -578,7 +580,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "npcs",
-							"sid": 706441262297877,
+							"sid": 989526471615829,
 							"parameters": {
 								"instance-variable": "dialogue",
 								"comparison": 1,
@@ -588,7 +590,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "npcs",
-							"sid": 108765841076350,
+							"sid": 351425185537901,
 							"parameters": {
 								"instance-variable": "dialogueMad",
 								"comparison": 1,
@@ -598,7 +600,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "npcs",
-							"sid": 861899338680505,
+							"sid": 212773920818691,
 							"parameters": {
 								"instance-variable": "dialogueSpecial",
 								"comparison": 1,
@@ -607,40 +609,344 @@
 						}
 					],
 					"actions": [],
-					"sid": 436685070753464,
+					"sid": 914749445172142,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 214684998375654,
+									"id": "pick-children",
+									"objectClass": "npcs",
+									"sid": 351834362773505,
 									"parameters": {
-										"object": "npcs",
-										"expression": "distance(player.X, player.Y, npcs.X, npcs.Y)",
-										"comparison": 3,
-										"value": "40"
+										"child": "npcControl",
+										"which": "own"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 578167808035639,
+							"sid": 311134946389941,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "for-each",
+											"id": "pick-by-comparison",
 											"objectClass": "System",
-											"sid": 734629488541898,
+											"sid": 350599524216122,
 											"parameters": {
-												"object": "npcs"
+												"object": "npcControl",
+												"expression": "distance(player.X, player.Y, npcControl.X, npcControl.Y)",
+												"comparison": 3,
+												"value": "40"
 											}
 										}
 									],
 									"actions": [],
-									"sid": 140706234158341,
+									"sid": 985310047468050,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 313768140537144,
+													"parameters": {
+														"object": "npcControl"
+													}
+												},
+												{
+													"id": "pick-parent",
+													"objectClass": "npcControl",
+													"sid": 571222188412943,
+													"parameters": {
+														"parent": "npcs",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 845511050701812,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "npcs",
+															"sid": 756006499781713,
+															"parameters": {
+																"child": "speechBubble",
+																"which": "own"
+															}
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "speechBubble",
+															"sid": 278166226337074,
+															"parameters": {
+																"instance-variable": "shown"
+															},
+															"isInverted": true
+														},
+														{
+															"id": "pick-children",
+															"objectClass": "speechBubble",
+															"sid": 996467600579314,
+															"parameters": {
+																"child": "textSpeech",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 450610004754696,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-boolean-instance-variable-set",
+																	"objectClass": "npcs",
+																	"sid": 476192666927217,
+																	"parameters": {
+																		"instance-variable": "lifeRuined"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 621818608438701,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-boolean-instance-variable-set",
+																			"objectClass": "npcs",
+																			"sid": 178287786916698,
+																			"parameters": {
+																				"instance-variable": "special"
+																			}
+																		},
+																		{
+																			"id": "compare-instance-variable",
+																			"objectClass": "npcs",
+																			"sid": 952792707503626,
+																			"parameters": {
+																				"instance-variable": "dialogueSpecial",
+																				"comparison": 1,
+																				"value": "\"\""
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "showTextBox",
+																			"sid": 281480600203496,
+																			"parameters": [
+																				"speechBubble.UID",
+																				"textSpeech.UID",
+																				"npcs.dialogueSpecial"
+																			]
+																		},
+																		{
+																			"id": "play",
+																			"objectClass": "Audio",
+																			"sid": 992171903233559,
+																			"parameters": {
+																				"audio-file": "talkMad",
+																				"loop": "not-looping",
+																				"volume": "log10(SETTING_soundVolume)*20",
+																				"stereo-pan": "0",
+																				"tag-optional": "\"sound\""
+																			}
+																		}
+																	],
+																	"sid": 961544796444556
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 720880255108265
+																		},
+																		{
+																			"id": "compare-instance-variable",
+																			"objectClass": "npcs",
+																			"sid": 890451553533194,
+																			"parameters": {
+																				"instance-variable": "dialogueMad",
+																				"comparison": 1,
+																				"value": "\"\""
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "showTextBox",
+																			"sid": 372886325809769,
+																			"parameters": [
+																				"speechBubble.UID",
+																				"textSpeech.UID",
+																				"npcs.dialogueMad"
+																			]
+																		},
+																		{
+																			"id": "play",
+																			"objectClass": "Audio",
+																			"sid": 304110186438792,
+																			"parameters": {
+																				"audio-file": "talkMad",
+																				"loop": "not-looping",
+																				"volume": "log10(SETTING_soundVolume)*20",
+																				"stereo-pan": "0",
+																				"tag-optional": "\"sound\""
+																			}
+																		}
+																	],
+																	"sid": 220311807255337
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 202506758430238
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "speechBubble",
+																			"sid": 637426685459223,
+																			"parameters": {
+																				"instance-variable": "shown",
+																				"value": "false"
+																			}
+																		},
+																		{
+																			"id": "set-visible",
+																			"objectClass": "speechBubble",
+																			"sid": 321155096980847,
+																			"parameters": {
+																				"visibility": "invisible"
+																			}
+																		}
+																	],
+																	"sid": 831816584403475
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 317529986041029
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "npcs",
+																	"sid": 680868062635308,
+																	"parameters": {
+																		"instance-variable": "dialogue",
+																		"comparison": 1,
+																		"value": "\"\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "showTextBox",
+																	"sid": 458618810244382,
+																	"parameters": [
+																		"speechBubble.UID",
+																		"textSpeech.UID",
+																		"npcs.dialogue"
+																	]
+																},
+																{
+																	"id": "play",
+																	"objectClass": "Audio",
+																	"sid": 614799653651268,
+																	"parameters": {
+																		"audio-file": "talk",
+																		"loop": "not-looping",
+																		"volume": "log10(SETTING_soundVolume)*20",
+																		"stereo-pan": "0",
+																		"tag-optional": "\"sound\""
+																	}
+																}
+															],
+															"sid": 137544000885013
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 853978046078463
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-boolean-instvar",
+																	"objectClass": "speechBubble",
+																	"sid": 716270602682592,
+																	"parameters": {
+																		"instance-variable": "shown",
+																		"value": "false"
+																	}
+																},
+																{
+																	"id": "set-visible",
+																	"objectClass": "speechBubble",
+																	"sid": 549581349011039,
+																	"parameters": {
+																		"visibility": "invisible"
+																	}
+																}
+															],
+															"sid": 864142550150020
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 506490862057517,
+											"parameters": {
+												"object": "npcControl",
+												"expression": "distance(player.X, player.Y, npcControl.X, npcControl.Y)",
+												"comparison": 4,
+												"value": "40"
+											}
+										},
+										{
+											"id": "pick-parent",
+											"objectClass": "npcControl",
+											"sid": 518280244405913,
+											"parameters": {
+												"parent": "npcs",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 878831802677290,
 									"children": [
 										{
 											"eventType": "block",
@@ -648,7 +954,7 @@
 												{
 													"id": "pick-children",
 													"objectClass": "npcs",
-													"sid": 851223063444643,
+													"sid": 676212177202817,
 													"parameters": {
 														"child": "speechBubble",
 														"which": "own"
@@ -657,206 +963,34 @@
 												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "speechBubble",
-													"sid": 411223664570036,
+													"sid": 745071970448752,
 													"parameters": {
 														"instance-variable": "shown"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "pick-children",
-													"objectClass": "speechBubble",
-													"sid": 520278839963962,
-													"parameters": {
-														"child": "textSpeech",
-														"which": "own"
 													}
 												}
 											],
-											"actions": [],
-											"sid": 285733398615806,
-											"children": [
+											"actions": [
 												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "npcs",
-															"sid": 501596541646167,
-															"parameters": {
-																"instance-variable": "lifeRuined"
-															}
-														}
-													],
-													"actions": [],
-													"sid": 622071131674342,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-boolean-instance-variable-set",
-																	"objectClass": "npcs",
-																	"sid": 309242215011405,
-																	"parameters": {
-																		"instance-variable": "special"
-																	}
-																},
-																{
-																	"id": "compare-instance-variable",
-																	"objectClass": "npcs",
-																	"sid": 908647028327434,
-																	"parameters": {
-																		"instance-variable": "dialogueSpecial",
-																		"comparison": 1,
-																		"value": "\"\""
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "showTextBox",
-																	"sid": 739794701328994,
-																	"parameters": [
-																		"speechBubble.UID",
-																		"textSpeech.UID",
-																		"npcs.dialogueSpecial"
-																	]
-																}
-															],
-															"sid": 680936403173666
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "else",
-																	"objectClass": "System",
-																	"sid": 555924631000401
-																},
-																{
-																	"id": "compare-instance-variable",
-																	"objectClass": "npcs",
-																	"sid": 352610531077036,
-																	"parameters": {
-																		"instance-variable": "dialogueMad",
-																		"comparison": 1,
-																		"value": "\"\""
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "showTextBox",
-																	"sid": 697831927713012,
-																	"parameters": [
-																		"speechBubble.UID",
-																		"textSpeech.UID",
-																		"npcs.dialogueMad"
-																	]
-																}
-															],
-															"sid": 576192224695179
-														}
-													]
+													"id": "set-boolean-instvar",
+													"objectClass": "speechBubble",
+													"sid": 755075598735225,
+													"parameters": {
+														"instance-variable": "shown",
+														"value": "false"
+													}
 												},
 												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 341116863146920
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "npcs",
-															"sid": 677427236004456,
-															"parameters": {
-																"instance-variable": "dialogue",
-																"comparison": 1,
-																"value": "\"\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "showTextBox",
-															"sid": 769995283006075,
-															"parameters": [
-																"speechBubble.UID",
-																"textSpeech.UID",
-																"npcs.dialogue"
-															]
-														}
-													],
-													"sid": 346997220934880
+													"id": "set-visible",
+													"objectClass": "speechBubble",
+													"sid": 552346853776394,
+													"parameters": {
+														"visibility": "invisible"
+													}
 												}
-											]
+											],
+											"sid": 175514107488853
 										}
 									]
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 213456141277165,
-									"parameters": {
-										"object": "npcs",
-										"expression": "distance(player.X, player.Y, npcs.X, npcs.Y)",
-										"comparison": 4,
-										"value": "40"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 566703321633528,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "npcs",
-											"sid": 800263520326408,
-											"parameters": {
-												"child": "speechBubble",
-												"which": "own"
-											}
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "speechBubble",
-											"sid": 111723726416132,
-											"parameters": {
-												"instance-variable": "shown"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "speechBubble",
-											"sid": 922014965166857,
-											"parameters": {
-												"instance-variable": "shown",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "speechBubble",
-											"sid": 341385341743667,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										}
-									],
-									"sid": 930833618246209
 								}
 							]
 						}
@@ -941,6 +1075,15 @@
 						},
 						{
 							"id": "set-size",
+							"objectClass": "textSpeech",
+							"sid": 766979713531184,
+							"parameters": {
+								"width": "100",
+								"height": "200"
+							}
+						},
+						{
+							"id": "set-size",
 							"objectClass": "speechBubble",
 							"sid": 508282615072118,
 							"parameters": {
@@ -976,12 +1119,11 @@
 							}
 						},
 						{
-							"id": "set-position",
+							"id": "set-x",
 							"objectClass": "speechBubble",
-							"sid": 329531375924499,
+							"sid": 682865723816490,
 							"parameters": {
-								"x": "npcs.X-floor(Self.Width/2)",
-								"y": "npcs.Y-npcs.Height"
+								"x": "npcs.X-floor(Self.Width/2)"
 							}
 						},
 						{

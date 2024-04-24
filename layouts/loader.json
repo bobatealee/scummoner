@@ -110,7 +110,24 @@
 		}
 	],
 	"sid": 420367483617324,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "ngioMedals",
+			"properties": {},
+			"uid": 50,
+			"instanceVariables": {}
+		},
+		{
+			"type": "achievements",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 360,
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 320,
 	"height": 180,

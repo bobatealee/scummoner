@@ -37,8 +37,8 @@
 			"id": "npcMad",
 			"virtualPosition": {
 				"offsetX": 0,
-				"offsetWidth": 19,
-				"offsetHeight": 29,
+				"offsetWidth": 0,
+				"offsetHeight": 0,
 				"offsetColor": [
 					1,
 					1,
@@ -52,7 +52,7 @@
 			"keyframes": [
 				{
 					"time": 0,
-					"tags": "",
+					"tags": "npcMadBegin",
 					"enabled": true,
 					"ease": "default",
 					"pathMode": "default"
@@ -108,7 +108,7 @@
 				},
 				{
 					"time": 0.8,
-					"tags": "",
+					"tags": "npcMadEnd",
 					"enabled": true,
 					"ease": "default",
 					"pathMode": "default"
@@ -487,6 +487,42 @@
 							"addons": []
 						}
 					]
+				},
+				{
+					"property": "madAnim",
+					"source": {
+						"type": "instance-variable",
+						"uid": "madAnim"
+					},
+					"enabled": true,
+					"interpolationMode": "default",
+					"resultMode": "default",
+					"ease": "Immediate",
+					"pathMode": "none",
+					"propertyKeyframes": [
+						{
+							"time": 0,
+							"enabled": true,
+							"resultMode": "default",
+							"ease": "default",
+							"pathMode": "none",
+							"value": 1,
+							"rValue": 1,
+							"aValue": 1,
+							"addons": []
+						},
+						{
+							"time": 0.7,
+							"enabled": true,
+							"resultMode": "default",
+							"ease": "default",
+							"pathMode": "none",
+							"value": 2,
+							"rValue": 2,
+							"aValue": 2,
+							"addons": []
+						}
+					]
 				}
 			],
 			"propertyTracksRoot": {
@@ -528,5 +564,45 @@
 		"subfolders": []
 	},
 	"nestedData": {},
-	"transitionsData": []
+	"transitionsData": [
+		{
+			"folders": [],
+			"json": {
+				"name": "Immediate",
+				"linear": false,
+				"transitionKeyframes": [
+					{
+						"x": 0,
+						"y": 0,
+						"sax": 0,
+						"say": 0,
+						"eax": 0,
+						"eay": 0,
+						"se": true,
+						"ee": false
+					},
+					{
+						"x": 1,
+						"y": 0,
+						"sax": 0,
+						"say": 0,
+						"eax": 0,
+						"eay": 0,
+						"se": true,
+						"ee": true
+					},
+					{
+						"x": 1,
+						"y": 1,
+						"sax": 0,
+						"say": 0,
+						"eax": 0,
+						"eay": 0,
+						"se": false,
+						"ee": true
+					}
+				]
+			}
+		}
+	]
 }

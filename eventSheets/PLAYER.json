@@ -113,34 +113,16 @@
 						"transform-visibility": false,
 						"destroy-with-parent": true
 					}
-				}
-			],
-			"sid": 136593168733989
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 955540774365465
 				},
-				{
-					"id": "on-load-complete",
-					"objectClass": "System",
-					"sid": 910799347860409
-				}
-			],
-			"actions": [
 				{
 					"id": "destroy",
 					"objectClass": "shadow",
-					"sid": 952916503782191
+					"sid": 523780397971752
 				},
 				{
 					"id": "spawn-another-object",
 					"objectClass": "player",
-					"sid": 124822886282360,
+					"sid": 478562415924267,
 					"parameters": {
 						"object": "shadow",
 						"layer": "\"Shadows\"",
@@ -151,7 +133,7 @@
 				{
 					"id": "add-child",
 					"objectClass": "player",
-					"sid": 972354804278062,
+					"sid": 624158670035931,
 					"parameters": {
 						"child": "shadow",
 						"transform-x": true,
@@ -166,13 +148,12 @@
 					}
 				}
 			],
-			"sid": 486609940218653,
-			"isOrBlock": true
+			"sid": 136593168733989
 		},
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "movement",
+			"title": "Movement",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -1116,9 +1097,9 @@
 				{
 					"id": "set-text",
 					"objectClass": "textBig",
-					"sid": 188775993570326,
+					"sid": 448918852558872,
 					"parameters": {
-						"text": "\"YOU DIED\""
+						"text": "\"GAME OVER\""
 					}
 				},
 				{
@@ -1359,13 +1340,75 @@
 								{
 									"id": "set-text",
 									"objectClass": "textSmall",
-									"sid": 309111312161418,
+									"sid": 724367827782946,
 									"parameters": {
-										"text": "\"Scummoner used up all the time!\""
+										"text": "\"Scummoner is all out of time!\""
 									}
 								}
 							],
 							"sid": 971596448728522
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 346897965054091
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 519048757810140,
+									"parameters": {
+										"variable": "PLAYER_deathType",
+										"comparison": 0,
+										"value": "6"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "textSmall",
+									"sid": 658339080773561,
+									"parameters": {
+										"text": "\"Scummoner achieved a flawless victory!\""
+									}
+								}
+							],
+							"sid": 496389604973126
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 655297079085405
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 237845900151465,
+									"parameters": {
+										"variable": "PLAYER_deathType",
+										"comparison": 0,
+										"value": "7"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "textSmall",
+									"sid": 838778398629663,
+									"parameters": {
+										"text": "\"Scummoner mercilessly killed everyone.\""
+									}
+								}
+							],
+							"sid": 335624727153199
 						},
 						{
 							"eventType": "block",
@@ -1417,18 +1460,6 @@
 			],
 			"actions": [
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 451834984460844,
-					"parameters": {
-						"audio-file": "menu",
-						"loop": "not-looping",
-						"volume": "log10(SETTING_soundVolume)*20",
-						"stereo-pan": "0",
-						"tag-optional": "\"sound\""
-					}
-				},
-				{
 					"id": "set-visible",
 					"objectClass": "textSmall",
 					"sid": 311669971200493,
@@ -1437,12 +1468,15 @@
 					}
 				},
 				{
-					"id": "set-playback-rate",
+					"id": "play",
 					"objectClass": "Audio",
-					"sid": 451033910778662,
+					"sid": 919947815400189,
 					"parameters": {
-						"tag": "\"sound\"",
-						"playback-rate": "0.9"
+						"audio-file": "menu",
+						"loop": "not-looping",
+						"volume": "log10(SETTING_soundVolume)*20",
+						"stereo-pan": "0",
+						"tag-optional": "\"sound\""
 					}
 				},
 				{
@@ -1454,7 +1488,90 @@
 					}
 				}
 			],
-			"sid": 111111025137449
+			"sid": 111111025137449,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 817394236837681,
+							"parameters": {
+								"variable": "PLAYER_deathType",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-playback-rate",
+							"objectClass": "Audio",
+							"sid": 718828186164398,
+							"parameters": {
+								"tag": "\"sound\"",
+								"playback-rate": "1.15"
+							}
+						}
+					],
+					"sid": 356183730660232
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 532851367193721
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 227262210854691,
+							"parameters": {
+								"variable": "PLAYER_deathType",
+								"comparison": 0,
+								"value": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-playback-rate",
+							"objectClass": "Audio",
+							"sid": 121789716080320,
+							"parameters": {
+								"tag": "\"sound\"",
+								"playback-rate": "0.75"
+							}
+						}
+					],
+					"sid": 939215524656370
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 819804872134839
+						}
+					],
+					"actions": [
+						{
+							"id": "set-playback-rate",
+							"objectClass": "Audio",
+							"sid": 158048733483473,
+							"parameters": {
+								"tag": "\"sound\"",
+								"playback-rate": "0.85"
+							}
+						}
+					],
+					"sid": 886833763379305
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -1540,6 +1657,15 @@
 							"sid": 847563017874191,
 							"parameters": {
 								"tags": "\"menuFadeOut\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 800166088999813,
+							"parameters": {
+								"tags": "\"deathTimer\""
 							},
 							"isInverted": true
 						}

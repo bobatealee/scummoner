@@ -172,6 +172,16 @@
 			"sid": 522098864410482
 		},
 		{
+			"eventType": "variable",
+			"name": "NPC_gunBullets",
+			"type": "number",
+			"initialValue": "6",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 432012982959710
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "GLOBAL"
 		},
@@ -190,14 +200,13 @@
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 936768170205292
-				},
-				{
-					"id": "on-load-complete",
-					"objectClass": "System",
-					"sid": 289256950414038
 				}
 			],
 			"actions": [
+				{
+					"type": "script",
+					"script": "window.addEventListener(\"wheel\", e => e.preventDefault(), { passive:false })"
+				},
 				{
 					"id": "stop",
 					"objectClass": "Audio",
@@ -217,11 +226,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 213270436267384,
+					"sid": 469823359756401,
 					"parameters": {
 						"audio-file": "scummoner",
 						"loop": "looping",
-						"volume": "log10(SETTING_musicVolume)*20",
+						"volume": "-Infinity",
 						"stereo-pan": "0",
 						"tag-optional": "\"music\""
 					}
@@ -322,10 +331,198 @@
 						"x": "random(waterOverlay.X+32, waterOverlay.X+waterOverlay.Width-32)",
 						"y": "random(waterOverlay.Y+32, waterOverlay.Y+waterOverlay.Height-32)"
 					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "achievementBubble",
+					"sid": 519772128587535,
+					"parameters": {
+						"child": "achievement",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-w": false,
+						"transform-h": false,
+						"transform-a": false,
+						"transform-o": false,
+						"transform-z-elevation": false,
+						"transform-visibility": true,
+						"destroy-with-parent": true
+					}
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "achievement",
+					"sid": 242604188282908
 				}
 			],
 			"sid": 308479435040122,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "textSmall",
+							"sid": 309334577124190,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"version\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "textSmall",
+							"sid": 122259022407696,
+							"parameters": {
+								"text": "\"v\"&projectversion"
+							}
+						}
+					],
+					"sid": 908102348850775
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "textSmall",
+							"sid": 332202537377016,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"achievementTitle\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-child",
+							"objectClass": "achievementBubble",
+							"sid": 102239699165744,
+							"parameters": {
+								"child": "textSmall",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": false,
+								"transform-visibility": true,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 482983286638245
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "textSmall",
+							"sid": 346132298187867,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"achievementName\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-child",
+							"objectClass": "achievementBubble",
+							"sid": 575771338406583,
+							"parameters": {
+								"child": "textSmall",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": false,
+								"transform-visibility": true,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 218906568772892
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "textSmall",
+							"sid": 397639084570499,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"achievementPoints\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-child",
+							"objectClass": "achievementBubble",
+							"sid": 195339612888251,
+							"parameters": {
+								"child": "textSmall",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": false,
+								"transform-visibility": true,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 846408822654483
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "textSmall",
+							"sid": 886280403042037,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"achievementPointsText\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-child",
+							"objectClass": "achievementBubble",
+							"sid": 627732194615590,
+							"parameters": {
+								"child": "textSmall",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": false,
+								"transform-visibility": true,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 198726665713258
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -650,6 +847,67 @@
 						{
 							"id": "for-each",
 							"objectClass": "System",
+							"sid": 300594740768660,
+							"parameters": {
+								"object": "table"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "table",
+							"sid": 334081118670860,
+							"parameters": {
+								"object": "shadowBig",
+								"layer": "\"Shadows\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "shadowBig",
+							"sid": 456116127401875,
+							"parameters": {
+								"animation": "\"square\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "shadowBig",
+							"sid": 599282250339757,
+							"parameters": {
+								"y": "Self.Y+16"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "table",
+							"sid": 242472571064684,
+							"parameters": {
+								"child": "shadowBig",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": true,
+								"transform-z-elevation": true,
+								"transform-visibility": true,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 381073683295498
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
 							"sid": 657224868638848,
 							"parameters": {
 								"object": "barrel"
@@ -733,8 +991,7 @@
 						}
 					]
 				}
-			],
-			"isOrBlock": true
+			]
 		},
 		{
 			"eventType": "block",
@@ -949,7 +1206,51 @@
 							}
 						}
 					],
-					"sid": 501891957643064
+					"sid": 501891957643064,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 685783614093464,
+									"parameters": {
+										"variable": "NGIO_medals"
+									}
+								},
+								{
+									"id": "index-to-medal-is-unlocked",
+									"objectClass": "ngioMedals",
+									"sid": 784682984076672,
+									"parameters": {
+										"index0": "achievements.IndexOf(78447)"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "achievement",
+									"sid": 279356996018386,
+									"parameters": [
+										"3",
+										"\"Clocked Out\"",
+										"25"
+									]
+								},
+								{
+									"id": "unlock",
+									"objectClass": "ngioMedals",
+									"sid": 572855045674417,
+									"parameters": {
+										"id0": "78447"
+									}
+								}
+							],
+							"sid": 800215897938157
+						}
+					]
 				}
 			]
 		},
@@ -1008,7 +1309,37 @@
 							"isInverted": true
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "boulder",
+							"sid": 760095010216598
+						},
+						{
+							"id": "destroy",
+							"objectClass": "boulderWater",
+							"sid": 225302198298905
+						},
+						{
+							"id": "destroy",
+							"objectClass": "cloud",
+							"sid": 767997569572827
+						},
+						{
+							"id": "destroy",
+							"objectClass": "devil",
+							"sid": 244846343936464
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 622291888643794,
+							"parameters": {
+								"variable": "GAME_totalSummons",
+								"value": "1"
+							}
+						}
+					],
 					"sid": 830941447142334,
 					"children": [
 						{
@@ -1050,37 +1381,7 @@
 											}
 										}
 									],
-									"actions": [
-										{
-											"id": "destroy",
-											"objectClass": "boulder",
-											"sid": 460820134987326
-										},
-										{
-											"id": "destroy",
-											"objectClass": "boulderWater",
-											"sid": 637402004347292
-										},
-										{
-											"id": "destroy",
-											"objectClass": "cloud",
-											"sid": 176058768894208
-										},
-										{
-											"id": "destroy",
-											"objectClass": "devil",
-											"sid": 512079615103343
-										},
-										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 106784800203965,
-											"parameters": {
-												"variable": "GAME_totalSummons",
-												"value": "1"
-											}
-										}
-									],
+									"actions": [],
 									"sid": 414585561052145,
 									"children": [
 										{
@@ -1278,48 +1579,6 @@
 									}
 								},
 								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 364987940344970,
-									"parameters": {
-										"object-to-create": "bullet",
-										"layer": "\"Entities\"",
-										"x": "playerControl.X",
-										"y": "playerControl.Y",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-angle-toward-position",
-									"objectClass": "bullet",
-									"sid": 788034799698612,
-									"parameters": {
-										"x": "Mouse.X",
-										"y": "Mouse.Y"
-									}
-								},
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 890633877165041,
-									"parameters": {
-										"audio-file": "explosion",
-										"loop": "not-looping",
-										"volume": "log10(SETTING_soundVolume)*20",
-										"stereo-pan": "0",
-										"tag-optional": "\"sound\""
-									}
-								},
-								{
-									"id": "set-y",
-									"objectClass": "bullet",
-									"sid": 458394012018351,
-									"parameters": {
-										"y": "Self.Y-12"
-									}
-								},
-								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 473412603699218,
@@ -1353,6 +1612,40 @@
 									"parameters": {
 										"animation": "player.sprite&\"_\"&(Functions.getDirection(round(playerAngle.Angle/45)*45))",
 										"from": "current-frame"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 965791714273304,
+									"parameters": {
+										"object-to-create": "bullet",
+										"layer": "\"Up\"",
+										"x": "player.ImagePointX(1)",
+										"y": "player.ImagePointY(1)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "bullet",
+									"sid": 850990263266647,
+									"parameters": {
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 790508438076464,
+									"parameters": {
+										"audio-file": "shoot",
+										"loop": "not-looping",
+										"volume": "log10(SETTING_soundVolume)*20",
+										"stereo-pan": "0",
+										"tag-optional": "\"sound\""
 									}
 								}
 							],
@@ -2628,6 +2921,48 @@
 														}
 													],
 													"sid": 962348071397172
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 389904929299071,
+															"parameters": {
+																"variable": "NGIO_medals"
+															}
+														},
+														{
+															"id": "index-to-medal-is-unlocked",
+															"objectClass": "ngioMedals",
+															"sid": 755989419886159,
+															"parameters": {
+																"index0": "achievements.IndexOf(78444)"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "achievement",
+															"sid": 820178053315040,
+															"parameters": [
+																"0",
+																"\"Oops\"",
+																"5"
+															]
+														},
+														{
+															"id": "unlock",
+															"objectClass": "ngioMedals",
+															"sid": 659828881978134,
+															"parameters": {
+																"id0": "78444"
+															}
+														}
+													],
+													"sid": 211579891491893
 												}
 											]
 										},
@@ -2922,6 +3257,48 @@
 														}
 													],
 													"sid": 692913016640668
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 621270097339513,
+															"parameters": {
+																"variable": "NGIO_medals"
+															}
+														},
+														{
+															"id": "index-to-medal-is-unlocked",
+															"objectClass": "ngioMedals",
+															"sid": 159332608605304,
+															"parameters": {
+																"index0": "achievements.IndexOf(78449)"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "achievement",
+															"sid": 245420648115210,
+															"parameters": [
+																"5",
+																"\"Maladjusted\"",
+																"10"
+															]
+														},
+														{
+															"id": "unlock",
+															"objectClass": "ngioMedals",
+															"sid": 108140080294872,
+															"parameters": {
+																"id0": "78449"
+															}
+														}
+													],
+													"sid": 741326061988795
 												}
 											]
 										},
@@ -3513,6 +3890,15 @@
 														"instance-variable": "happiness",
 														"value": "1000"
 													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 219524805133135,
+													"parameters": {
+														"variable": "GAME_deathsCaused",
+														"value": "1"
+													}
 												}
 											],
 											"sid": 316974986355551,
@@ -3521,27 +3907,43 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "pick-children",
-															"objectClass": "npcs",
-															"sid": 827373955528905,
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 355287858095599,
 															"parameters": {
-																"child": "speechBubble",
-																"which": "own"
+																"variable": "NGIO_medals"
 															}
+														},
+														{
+															"id": "index-to-medal-is-unlocked",
+															"objectClass": "ngioMedals",
+															"sid": 752395847060288,
+															"parameters": {
+																"index0": "achievements.IndexOf(78450)"
+															},
+															"isInverted": true
 														}
 													],
 													"actions": [
 														{
-															"id": "set-boolean-instvar",
-															"objectClass": "speechBubble",
-															"sid": 130100389358880,
+															"callFunction": "achievement",
+															"sid": 876726395172203,
+															"parameters": [
+																"6",
+																"\"Nice Catch\"",
+																"10"
+															]
+														},
+														{
+															"id": "unlock",
+															"objectClass": "ngioMedals",
+															"sid": 836891048079983,
 															"parameters": {
-																"instance-variable": "shown",
-																"value": "false"
+																"id0": "78450"
 															}
 														}
 													],
-													"sid": 300093336940729
+													"sid": 756027998860302
 												}
 											]
 										}
@@ -4130,28 +4532,56 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "npcs",
-									"sid": 297287540020396,
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 508757348942489,
 									"parameters": {
-										"instance-variable": "happiness",
-										"comparison": 4,
-										"value": "0"
+										"object": "npcs"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 801650102826343,
+							"children": [
 								{
-									"id": "subtract-from-instvar",
-									"objectClass": "npcs",
-									"sid": 774317476707835,
-									"parameters": {
-										"instance-variable": "happiness",
-										"value": "(60*dt)*5"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 161388778147863,
+											"parameters": {
+												"object": "npcs",
+												"expression": "distance(cloud.X, cloud.Y+56, npcs.X, npcs.Y)",
+												"comparison": 3,
+												"value": "50"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "npcs",
+											"sid": 927574924025391,
+											"parameters": {
+												"instance-variable": "happiness",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "npcs",
+											"sid": 644956611957240,
+											"parameters": {
+												"instance-variable": "happiness",
+												"value": "(60*dt)*round(random(4.6, 25.4))"
+											}
+										}
+									],
+									"sid": 224750312171521
 								}
-							],
-							"sid": 753948440858367
+							]
 						},
 						{
 							"eventType": "comment",
@@ -4191,10 +4621,11 @@
 								{
 									"id": "add-to-instvar",
 									"objectClass": "npcs",
-									"sid": 487791402888564,
+									"sid": 297672022638531,
+									"disabled": true,
 									"parameters": {
 										"instance-variable": "happiness",
-										"value": "200"
+										"value": "500"
 									}
 								},
 								{
@@ -4868,6 +5299,48 @@
 								}
 							],
 							"sid": 120429393439035
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 822601124880150,
+									"parameters": {
+										"variable": "NGIO_medals"
+									}
+								},
+								{
+									"id": "index-to-medal-is-unlocked",
+									"objectClass": "ngioMedals",
+									"sid": 145161316321358,
+									"parameters": {
+										"index0": "achievements.IndexOf(78449)"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "achievement",
+									"sid": 319070204636764,
+									"parameters": [
+										"5",
+										"\"Maladjusted\"",
+										"10"
+									]
+								},
+								{
+									"id": "unlock",
+									"objectClass": "ngioMedals",
+									"sid": 683917321877017,
+									"parameters": {
+										"id0": "78449"
+									}
+								}
+							],
+							"sid": 573604223475843
 						}
 					]
 				},
@@ -5238,6 +5711,18 @@
 									"parameters": {
 										"folder": "sounds",
 										"audio-file-name": "\"scream/scream\"&round(random(-0.49,2.49))",
+										"loop": "not-looping",
+										"volume": "log10(SETTING_soundVolume)*20",
+										"stereo-pan": "0",
+										"tag-optional": "\"sound\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 837503591148867,
+									"parameters": {
+										"audio-file": "woosh",
 										"loop": "not-looping",
 										"volume": "log10(SETTING_soundVolume)*20",
 										"stereo-pan": "0",
@@ -6442,6 +6927,48 @@
 								}
 							],
 							"sid": 827287156477212
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 992637780900352,
+									"parameters": {
+										"variable": "NGIO_medals"
+									}
+								},
+								{
+									"id": "index-to-medal-is-unlocked",
+									"objectClass": "ngioMedals",
+									"sid": 859202910771297,
+									"parameters": {
+										"index0": "achievements.IndexOf(78445)"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "achievement",
+									"sid": 366517571164129,
+									"parameters": [
+										"1",
+										"\"Inattentive\"",
+										"5"
+									]
+								},
+								{
+									"id": "unlock",
+									"objectClass": "ngioMedals",
+									"sid": 428128983623950,
+									"parameters": {
+										"id0": "78445"
+									}
+								}
+							],
+							"sid": 371086880539924
 						}
 					]
 				},
@@ -6930,6 +7457,14 @@
 							"parameters": {
 								"object": "fireRingHitbox"
 							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "cake",
+							"sid": 827787227711274,
+							"parameters": {
+								"animation": "\"extinguished\""
+							}
 						}
 					],
 					"actions": [
@@ -7254,6 +7789,357 @@
 								}
 							],
 							"sid": 713875836204297
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "dog",
+							"sid": 970562946958958,
+							"parameters": {
+								"object": "fireRingHitbox"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "dog",
+							"sid": 890440029194742,
+							"parameters": {
+								"object": "fireSpread"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 935170995472924,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "dog",
+									"sid": 682239671625459,
+									"parameters": {
+										"instance-variable": "onFire"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "dog",
+									"sid": 750957203629690,
+									"parameters": {
+										"instance-variable": "onFire",
+										"value": "true"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "dog",
+									"sid": 442615132689454,
+									"parameters": {
+										"object": "fire",
+										"layer": "\"Up\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "dog",
+									"sid": 280433618189700,
+									"parameters": {
+										"child": "fire",
+										"transform-x": false,
+										"transform-y": false,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-o": false,
+										"transform-z-elevation": false,
+										"transform-visibility": false,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "fire",
+									"sid": 194468371663299,
+									"parameters": {
+										"angle": "-90"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "fire",
+									"sid": 120411102406924,
+									"parameters": {
+										"y": "Self.Y-12"
+									}
+								}
+							],
+							"sid": 561075170245381,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "dog",
+											"sid": 679325513814404,
+											"parameters": {
+												"child": "npcMad",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "npcMad",
+											"sid": 452297303720308
+										}
+									],
+									"sid": 417022769129877
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "dog",
+							"sid": 120027050994358,
+							"parameters": {
+								"instance-variable": "onFire"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 366131129142058,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "dog",
+									"sid": 316695710458790,
+									"parameters": {
+										"instance-variable": "health",
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "dog",
+									"sid": 647290835977357,
+									"parameters": {
+										"instance-variable": "health",
+										"value": "60*dt"
+									}
+								}
+							],
+							"sid": 548194752913177
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "dog",
+									"sid": 679194413424549,
+									"parameters": {
+										"instance-variable": "health",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 354620736538705,
+									"parameters": {
+										"audio-file": "explosion",
+										"loop": "not-looping",
+										"volume": "log10(SETTING_soundVolume)*20",
+										"stereo-pan": "0",
+										"tag-optional": "\"sound\""
+									}
+								},
+								{
+									"id": "shake",
+									"objectClass": "camera",
+									"sid": 188875731600475,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"magnitude": "5",
+										"duration": "0.25",
+										"mode": "reducing-magnitude"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "dog",
+									"sid": 988563961861411,
+									"parameters": {
+										"object": "blood",
+										"layer": "\"Down\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "move-to-bottom",
+									"objectClass": "blood",
+									"sid": 802333585632411
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "blood",
+									"sid": 530352474832252
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "blood",
+									"sid": 619061084246123,
+									"parameters": {
+										"frame-number": "round(random(-0.49, 4.5))"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 823341859041208,
+									"parameters": {
+										"object-to-create": "bloodSplatter",
+										"layer": "\"Effects\"",
+										"x": "dog.X",
+										"y": "dog.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "dog",
+									"sid": 834056138018661
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 347860897177573,
+									"parameters": {
+										"variable": "GAME_deathsCaused",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 898395978447189,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 527821591806294,
+											"parameters": {
+												"first-value": "round(random(-0.49, 1.49))",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "blood",
+											"sid": 717198730507917,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 231118421022769
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 244390552329653,
+											"parameters": {
+												"first-value": "round(random(-0.49, 1.49))",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-flipped",
+											"objectClass": "blood",
+											"sid": 122773316588114,
+											"parameters": {
+												"state": "flipped"
+											}
+										}
+									],
+									"sid": 325745361014757
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "npcs",
+											"sid": 873227092427318,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "11"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "npcs",
+											"sid": 658139340349988,
+											"parameters": {
+												"instance-variable": "happiness",
+												"value": "1000"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "npcs",
+											"sid": 267153844829009,
+											"parameters": {
+												"instance-variable": "special",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 855097280129890
+								}
+							]
 						}
 					]
 				}
@@ -7634,6 +8520,196 @@
 								}
 							],
 							"sid": 237562343043736
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "bullet",
+							"sid": 611022729268359,
+							"parameters": {
+								"object": "dog"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "bullet",
+							"sid": 126435393557173
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 849663160237524,
+							"parameters": {
+								"audio-file": "explosion",
+								"loop": "not-looping",
+								"volume": "log10(SETTING_soundVolume)*20",
+								"stereo-pan": "0",
+								"tag-optional": "\"sound\""
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "camera",
+							"sid": 212243964387722,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "5",
+								"duration": "0.25",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "dog",
+							"sid": 162267676543383,
+							"parameters": {
+								"object": "blood",
+								"layer": "\"Down\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "blood",
+							"sid": 932935038389089
+						},
+						{
+							"id": "stop-animation",
+							"objectClass": "blood",
+							"sid": 523268742540844
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "blood",
+							"sid": 737773673633504,
+							"parameters": {
+								"frame-number": "round(random(-0.49, 4.5))"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 720546962857687,
+							"parameters": {
+								"object-to-create": "bloodSplatter",
+								"layer": "\"Effects\"",
+								"x": "dog.X",
+								"y": "dog.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "dog",
+							"sid": 350516939752593
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 240623485755558,
+							"parameters": {
+								"variable": "GAME_deathsCaused",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 949641490009021,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 964712850095094,
+									"parameters": {
+										"first-value": "round(random(-0.49, 1.49))",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "blood",
+									"sid": 286832712889931,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 314816513502858
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 758750582612466,
+									"parameters": {
+										"first-value": "round(random(-0.49, 1.49))",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-flipped",
+									"objectClass": "blood",
+									"sid": 167665906073976,
+									"parameters": {
+										"state": "flipped"
+									}
+								}
+							],
+							"sid": 154673261360275
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "npcs",
+									"sid": 462874964179527,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "11"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "npcs",
+									"sid": 566377665368937,
+									"parameters": {
+										"instance-variable": "happiness",
+										"value": "1000"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "npcs",
+									"sid": 409666494393683,
+									"parameters": {
+										"instance-variable": "special",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 637962254503222
 						}
 					]
 				}
@@ -8083,6 +9159,7 @@
 							"id": "add-to-instvar",
 							"objectClass": "npcs",
 							"sid": 644012196590571,
+							"disabled": true,
 							"parameters": {
 								"instance-variable": "happiness",
 								"value": "60*dt"
@@ -8229,6 +9306,190 @@
 										}
 									],
 									"sid": 811148528806490
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-keyframe-reached",
+							"objectClass": "TimelineController",
+							"sid": 971084331179338,
+							"parameters": {
+								"tags": "\"npcMadBegin\"",
+								"match": "any-tags"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 505312794365368,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 783590584567870,
+									"parameters": {
+										"object": "npcs",
+										"expression": "npcs.madAnim",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 659441308181145,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 400825873879056,
+											"parameters": {
+												"object": "npcs"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "npcs",
+											"sid": 240948440637689,
+											"parameters": {
+												"child": "npcControl",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "remove-child",
+											"objectClass": "npcs",
+											"sid": 496540526884084,
+											"parameters": {
+												"child": "npcControl"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "npcs",
+											"sid": 628795396122831,
+											"parameters": {
+												"child": "npcControl",
+												"transform-x": false,
+												"transform-y": false,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-o": false,
+												"transform-z-elevation": false,
+												"transform-visibility": false,
+												"destroy-with-parent": true
+											}
+										}
+									],
+									"sid": 831951068526060
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-keyframe-reached",
+							"objectClass": "TimelineController",
+							"sid": 922601868294771,
+							"parameters": {
+								"tags": "\"npcMadEnd\"",
+								"match": "any-tags"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 409177216087561,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 279515997233937,
+									"parameters": {
+										"object": "npcs",
+										"expression": "npcs.madAnim",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 642904218235721,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 679851277220954,
+											"parameters": {
+												"object": "npcs"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "npcs",
+											"sid": 243234728367384,
+											"parameters": {
+												"child": "npcControl",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "remove-child",
+											"objectClass": "npcs",
+											"sid": 514254902910534,
+											"parameters": {
+												"child": "npcControl"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "npcs",
+											"sid": 604739526713160,
+											"parameters": {
+												"child": "npcControl",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-o": false,
+												"transform-z-elevation": false,
+												"transform-visibility": false,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "npcs",
+											"sid": 976359613509523,
+											"parameters": {
+												"scale": "1"
+											}
+										}
+									],
+									"sid": 704728364651580
 								}
 							]
 						}
@@ -8553,90 +9814,122 @@
 										"comparison": 3,
 										"value": "0"
 									}
-								},
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 505624158478616
-								},
-								{
-									"id": "pick-children",
-									"objectClass": "npcs",
-									"sid": 141449055436159,
-									"parameters": {
-										"child": "npcAngle",
-										"which": "own"
-									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 692937689696014,
+							"children": [
 								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 349083337624864,
-									"parameters": {
-										"audio-file": "explosion",
-										"loop": "not-looping",
-										"volume": "log10(SETTING_soundVolume)*20",
-										"stereo-pan": "0",
-										"tag-optional": "\"sound\""
-									}
-								},
-								{
-									"id": "spawn-another-object",
-									"objectClass": "npcs",
-									"sid": 400364299114834,
-									"parameters": {
-										"object": "bullet",
-										"layer": "\"Entities\"",
-										"image-point": "0",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "bullet",
-									"sid": 994405134315479,
-									"parameters": {
-										"angle": "npcAngle.Angle"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 108639267020891,
+											"parameters": {
+												"interval-seconds": "0.5"
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 278945337520303,
+											"parameters": {
+												"variable": "PLAYER_dead"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 474307698037941,
+											"parameters": {
+												"audio-file": "shoot",
+												"loop": "not-looping",
+												"volume": "log10(SETTING_soundVolume)*20",
+												"stereo-pan": "0",
+												"tag-optional": "\"sound\""
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "npcs",
+											"sid": 459448543887742,
+											"parameters": {
+												"object": "bullet",
+												"layer": "\"Up\"",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle-toward-position",
+											"objectClass": "bullet",
+											"sid": 730789462785088,
+											"parameters": {
+												"x": "playerControl.X",
+												"y": "playerControl.Y"
+											}
+										},
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 451455367400600,
+											"parameters": {
+												"variable": "NPC_gunBullets",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 187209243528077
 								}
-							],
-							"sid": 692937689696014
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 419697330304864,
-									"parameters": {
-										"variable": "NPC_gunCooldown",
-										"comparison": 3,
-										"value": "-10"
-									}
-								},
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 167871465440082
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "npcs",
-									"sid": 718475204620288,
-									"parameters": {
-										"instance-variable": "sprite",
-										"value": "\"dummyMad\""
-									}
-								}
-							],
-							"sid": 437095980246485
+							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "npcs",
+							"sid": 898867564208384,
+							"parameters": {
+								"instance-variable": "sprite",
+								"comparison": 0,
+								"value": "\"dummyGun\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 380697158493026,
+							"parameters": {
+								"variable": "NPC_gunBullets",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 483506593366055
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "npcs",
+							"sid": 898350304107543,
+							"parameters": {
+								"instance-variable": "sprite",
+								"value": "\"dummyMad\""
+							}
+						}
+					],
+					"sid": 171796781277399
 				},
 				{
 					"eventType": "block",
@@ -8846,6 +10139,48 @@
 								}
 							],
 							"sid": 350953089297267
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 758051540710283,
+									"parameters": {
+										"variable": "NGIO_medals"
+									}
+								},
+								{
+									"id": "index-to-medal-is-unlocked",
+									"objectClass": "ngioMedals",
+									"sid": 124403773941394,
+									"parameters": {
+										"index0": "achievements.IndexOf(78448)"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "achievement",
+									"sid": 451035187942980,
+									"parameters": [
+										"4",
+										"\"Agitator\"",
+										"25"
+									]
+								},
+								{
+									"id": "unlock",
+									"objectClass": "ngioMedals",
+									"sid": 556563692728482,
+									"parameters": {
+										"id0": "78448"
+									}
+								}
+							],
+							"sid": 152483448632981
 						}
 					]
 				},
@@ -8855,9 +10190,19 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "bullet",
-							"sid": 659787151390584,
+							"sid": 987805409612099,
 							"parameters": {
-								"object": "terrain"
+								"object": "collisions"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "collisions",
+							"sid": 643368295098665,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "1"
 							}
 						}
 					],
@@ -8869,6 +10214,27 @@
 						}
 					],
 					"sid": 389185359846292
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "bullet",
+							"sid": 567137551051913,
+							"parameters": {
+								"object": "objects"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "bullet",
+							"sid": 926207411897512
+						}
+					],
+					"sid": 840627801667044
 				},
 				{
 					"eventType": "block",
@@ -8938,6 +10304,18 @@
 							}
 						},
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 903882494810117,
+							"parameters": {
+								"audio-file": "woosh",
+								"loop": "not-looping",
+								"volume": "log10(SETTING_soundVolume)*20",
+								"stereo-pan": "0",
+								"tag-optional": "\"sound\""
+							}
+						},
+						{
 							"id": "shake",
 							"objectClass": "camera",
 							"sid": 551476173673621,
@@ -8998,18 +10376,53 @@
 								"variable": "PLAYER_deathType",
 								"value": "4"
 							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 290538747727448,
-							"parameters": {
-								"variable": "GAME_deathsCaused",
-								"value": "1"
-							}
 						}
 					],
-					"sid": 935670456523693
+					"sid": 935670456523693,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 813921049886641,
+									"parameters": {
+										"variable": "NGIO_medals"
+									}
+								},
+								{
+									"id": "index-to-medal-is-unlocked",
+									"objectClass": "ngioMedals",
+									"sid": 761284488840714,
+									"parameters": {
+										"index0": "achievements.IndexOf(78446)"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "achievement",
+									"sid": 619729012326551,
+									"parameters": [
+										"2",
+										"\"Pitfall\"",
+										"10"
+									]
+								},
+								{
+									"id": "unlock",
+									"objectClass": "ngioMedals",
+									"sid": 961322081350843,
+									"parameters": {
+										"id0": "78446"
+									}
+								}
+							],
+							"sid": 536382297358959
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -9024,6 +10437,18 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 402069167410428,
+							"parameters": {
+								"audio-file": "boioing",
+								"loop": "not-looping",
+								"volume": "log10(SETTING_soundVolume)*20",
+								"stereo-pan": "0",
+								"tag-optional": "\"sound\""
+							}
+						},
 						{
 							"id": "destroy",
 							"objectClass": "gunFloor",
@@ -9070,7 +10495,7 @@
 								{
 									"id": "repeat",
 									"objectClass": "System",
-									"sid": 370147220449969,
+									"sid": 692311681072200,
 									"parameters": {
 										"count": "SUMMON_maxSummon"
 									}
@@ -9080,7 +10505,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 192914326866672,
+									"sid": 183185503335927,
 									"parameters": {
 										"object-to-create": "menuSummonItem",
 										"layer": "\"HUD\"",
@@ -9093,12 +10518,12 @@
 								{
 									"id": "stop-animation",
 									"objectClass": "menuSummonItem",
-									"sid": 692640145727501
+									"sid": 142887509046056
 								},
 								{
 									"id": "set-animation-frame",
 									"objectClass": "menuSummonItem",
-									"sid": 709962317794384,
+									"sid": 731092003466166,
 									"parameters": {
 										"frame-number": "SUMMON_menuSummonItem"
 									}
@@ -9106,19 +10531,873 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 862198149491355,
+									"sid": 728474425763471,
 									"parameters": {
 										"variable": "SUMMON_menuSummonItem",
 										"value": "1"
 									}
 								}
 							],
-							"sid": 973725575767881
+							"sid": 753570039999785
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 639708035340353,
+									"parameters": {
+										"variable": "NGIO_medals"
+									}
+								},
+								{
+									"id": "index-to-medal-is-unlocked",
+									"objectClass": "ngioMedals",
+									"sid": 451040001794253,
+									"parameters": {
+										"index0": "achievements.IndexOf(78451)"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "achievement",
+									"sid": 288098093933358,
+									"parameters": [
+										"7",
+										"\"GUN\"",
+										"50"
+									]
+								},
+								{
+									"id": "unlock",
+									"objectClass": "ngioMedals",
+									"sid": 775192893366310,
+									"parameters": {
+										"id0": "78451"
+									}
+								}
+							],
+							"sid": 882486952023828
 						}
 					]
 				}
 			],
 			"sid": 911259967909150
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 784431599366566,
+					"parameters": {
+						"first-value": "npcs.Count",
+						"comparison": 3,
+						"second-value": "0"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 858804680534176
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 323683846296170,
+					"parameters": {
+						"variable": "SUMMON_canSummon",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "camera",
+					"sid": 599599194178189,
+					"parameters": {
+						"instance-variable": "override",
+						"value": "true"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "player",
+					"sid": 953059182546964,
+					"parameters": {
+						"object": "blood",
+						"layer": "\"Down\"",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "blood",
+					"sid": 912020104163740
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "blood",
+					"sid": 938182167482700
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "blood",
+					"sid": 424751782396250,
+					"parameters": {
+						"frame-number": "round(random(-0.49, 4.5))"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "player",
+					"sid": 730919818291309
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 112649816977877,
+					"parameters": {
+						"audio-file": "evil",
+						"loop": "not-looping",
+						"volume": "log10(SETTING_soundVolume)*20",
+						"stereo-pan": "0",
+						"tag-optional": "\"sound\""
+					}
+				},
+				{
+					"id": "set-playback-rate",
+					"objectClass": "Audio",
+					"sid": 831165573807659,
+					"parameters": {
+						"tag": "\"sound\"",
+						"playback-rate": "0.5"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 408179131831006,
+					"parameters": {
+						"audio-file": "explosion",
+						"loop": "not-looping",
+						"volume": "log10(SETTING_soundVolume)*20",
+						"stereo-pan": "0",
+						"tag-optional": "\"sound\""
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "camera",
+					"sid": 986198696949727,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"magnitude": "2.5",
+						"duration": "0.25",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "add-gain-effect",
+					"objectClass": "Audio",
+					"sid": 113769070244747,
+					"parameters": {
+						"tag": "\"music\"",
+						"gain": "-27.5"
+					}
+				},
+				{
+					"id": "add-convolution-effect",
+					"objectClass": "Audio",
+					"sid": 452841992541656,
+					"parameters": {
+						"tag": "\"music\"",
+						"audio": "explosion",
+						"level": "dont-normalize",
+						"mix": "100"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 479800845128358,
+					"parameters": {
+						"object-to-create": "explosion",
+						"layer": "\"Effects\"",
+						"x": "playerControl.X",
+						"y": "playerControl.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 664056513244886,
+					"parameters": {
+						"object-to-create": "bloodSplatter",
+						"layer": "\"Effects\"",
+						"x": "playerControl.X",
+						"y": "playerControl.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 470313817368678,
+					"parameters": {
+						"variable": "PLAYER_dead",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 804465113096343,
+					"parameters": {
+						"variable": "PLAYER_deathType",
+						"value": "7"
+					}
+				}
+			],
+			"sid": 597494303569507,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 291063991598543,
+							"parameters": {
+								"first-value": "round(random(-0.49, 1.49))",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "blood",
+							"sid": 808945046794975,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 344112743409880
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 511179891324932,
+							"parameters": {
+								"first-value": "round(random(-0.49, 1.49))",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-flipped",
+							"objectClass": "blood",
+							"sid": 334749098451075,
+							"parameters": {
+								"state": "flipped"
+							}
+						}
+					],
+					"sid": 104974142619925
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 367537823321528,
+							"parameters": {
+								"variable": "NGIO_medals"
+							}
+						},
+						{
+							"id": "index-to-medal-is-unlocked",
+							"objectClass": "ngioMedals",
+							"sid": 834646972697856,
+							"parameters": {
+								"index0": "achievements.IndexOf(78452)"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "achievement",
+							"sid": 314055409710430,
+							"parameters": [
+								"8",
+								"\"Genocide\"",
+								"50"
+							]
+						},
+						{
+							"id": "unlock",
+							"objectClass": "ngioMedals",
+							"sid": 188345838267082,
+							"parameters": {
+								"id0": "78452"
+							}
+						}
+					],
+					"sid": 235224476628424
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 913760965720074,
+					"parameters": {
+						"variable": "GAME_livesRuined",
+						"comparison": 0,
+						"value": "125"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 629852252051988,
+					"parameters": {
+						"variable": "GAME_deathsCaused",
+						"comparison": 0,
+						"value": "0"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 554651891660169
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 580155744240802,
+					"parameters": {
+						"variable": "SUMMON_canSummon",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "camera",
+					"sid": 354178296407622,
+					"parameters": {
+						"instance-variable": "override",
+						"value": "true"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "player",
+					"sid": 950701737362828,
+					"parameters": {
+						"object": "blood",
+						"layer": "\"Down\"",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "blood",
+					"sid": 919758863641914
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "blood",
+					"sid": 813120133471805
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "blood",
+					"sid": 548379181385526,
+					"parameters": {
+						"frame-number": "round(random(-0.49, 4.5))"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "player",
+					"sid": 100037458200015
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 855061167476651,
+					"parameters": {
+						"audio-file": "explosion",
+						"loop": "not-looping",
+						"volume": "log10(SETTING_soundVolume)*20",
+						"stereo-pan": "0",
+						"tag-optional": "\"sound\""
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "camera",
+					"sid": 466603039039107,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"magnitude": "2.5",
+						"duration": "0.25",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 942471557825118,
+					"parameters": {
+						"audio-file": "yay",
+						"loop": "not-looping",
+						"volume": "log10(SETTING_soundVolume)*20",
+						"stereo-pan": "0",
+						"tag-optional": "\"sound\""
+					}
+				},
+				{
+					"id": "add-gain-effect",
+					"objectClass": "Audio",
+					"sid": 496089132515012,
+					"parameters": {
+						"tag": "\"music\"",
+						"gain": "-27.5"
+					}
+				},
+				{
+					"id": "add-convolution-effect",
+					"objectClass": "Audio",
+					"sid": 286722918098258,
+					"parameters": {
+						"tag": "\"music\"",
+						"audio": "explosion",
+						"level": "dont-normalize",
+						"mix": "100"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 999181214722722,
+					"parameters": {
+						"object-to-create": "bloodSplatter",
+						"layer": "\"Effects\"",
+						"x": "playerControl.X",
+						"y": "playerControl.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 545267720589622,
+					"parameters": {
+						"object-to-create": "confetti",
+						"layer": "\"Effects\"",
+						"x": "playerControl.X",
+						"y": "playerControl.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 579210728533453,
+					"parameters": {
+						"variable": "PLAYER_dead",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 415296960873635,
+					"parameters": {
+						"variable": "PLAYER_deathType",
+						"value": "6"
+					}
+				}
+			],
+			"sid": 860854437819999,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 702626239208490,
+							"parameters": {
+								"first-value": "round(random(-0.49, 1.49))",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "blood",
+							"sid": 759202308088618,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 485963384651744
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 756884747339490,
+							"parameters": {
+								"first-value": "round(random(-0.49, 1.49))",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-flipped",
+							"objectClass": "blood",
+							"sid": 690451768252541,
+							"parameters": {
+								"state": "flipped"
+							}
+						}
+					],
+					"sid": 963976065266424
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 252668360443868,
+							"parameters": {
+								"variable": "NGIO_medals"
+							}
+						},
+						{
+							"id": "index-to-medal-is-unlocked",
+							"objectClass": "ngioMedals",
+							"sid": 998756533972169,
+							"parameters": {
+								"index0": "achievements.IndexOf(78453)"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "achievement",
+							"sid": 969785554022821,
+							"parameters": [
+								"9",
+								"\"Sacred Duty\"",
+								"100"
+							]
+						},
+						{
+							"id": "unlock",
+							"objectClass": "ngioMedals",
+							"sid": 174897188491818,
+							"parameters": {
+								"id0": "78453"
+							}
+						}
+					],
+					"sid": 321941400676647
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "confettiSprite",
+					"sid": 932988707732585
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-animation",
+					"objectClass": "confettiSprite",
+					"sid": 291443409097383
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "confettiSprite",
+					"sid": 722613649485152,
+					"parameters": {
+						"frame-number": "random(-0.4, 8.4)"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "confettiSprite",
+					"sid": 843690634397480,
+					"parameters": {
+						"angle": "random(0, 360)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "confettiSprite",
+					"sid": 557455570192914,
+					"parameters": {
+						"instance-variable": "rotspeed",
+						"value": "random(-20, 20)"
+					}
+				}
+			],
+			"sid": 234950620100267
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-visible",
+					"objectClass": "confettiSprite",
+					"sid": 961962467009400
+				}
+			],
+			"actions": [
+				{
+					"id": "rotate-clockwise",
+					"objectClass": "confettiSprite",
+					"sid": 861168444575428,
+					"parameters": {
+						"degrees": "(60*dt)*Self.rotspeed"
+					}
+				}
+			],
+			"sid": 165763581687380
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 909563967301504,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "achievement",
+					"sid": 113511808098241,
+					"parameters": [
+						"9",
+						"\"Sacred Duty\"",
+						"100"
+					]
+				}
+			],
+			"sid": 826299709422889
+		},
+		{
+			"functionName": "achievement",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [
+				{
+					"name": "id",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 677537222711717
+				},
+				{
+					"name": "name",
+					"type": "string",
+					"initialValue": "killrock",
+					"comment": "",
+					"sid": 829671780157366
+				},
+				{
+					"name": "points",
+					"type": "number",
+					"initialValue": "5",
+					"comment": "",
+					"sid": 367175869996356
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 519875731442184,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 136040047652647,
+							"parameters": {
+								"tags": "\"achievement\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 501380967607254,
+							"parameters": {
+								"audio-file": "achievement",
+								"loop": "not-looping",
+								"volume": "log10(SETTING_soundVolume)*20",
+								"stereo-pan": "0",
+								"tag-optional": "\"sound\""
+							}
+						},
+						{
+							"id": "play-timeline",
+							"objectClass": "TimelineController",
+							"sid": 835983402973360,
+							"parameters": {
+								"timeline": "achievement",
+								"tags": "\"achievement\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "achievement",
+							"sid": 108079188834405,
+							"parameters": {
+								"frame-number": "id"
+							}
+						}
+					],
+					"sid": 912829056843437,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "textSmall",
+									"sid": 172413168011149,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"achievementName\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "textSmall",
+									"sid": 573052446056732,
+									"parameters": {
+										"text": "name"
+									}
+								}
+							],
+							"sid": 751869537128686
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "textSmall",
+									"sid": 902447204225132,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"achievementPoints\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "textSmall",
+									"sid": 955943061372193,
+									"parameters": {
+										"text": "str(points)"
+									}
+								}
+							],
+							"sid": 329655528085522
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 406315969985213
+						}
+					],
+					"actions": [
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 468100008736597
+						},
+						{
+							"callFunction": "achievement",
+							"sid": 566133735149293,
+							"parameters": [
+								"id",
+								"name",
+								"points"
+							]
+						}
+					],
+					"sid": 468224238281175
+				}
+			]
 		}
 	],
 	"sid": 526958935124117

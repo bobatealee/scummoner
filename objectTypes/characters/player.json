@@ -682,6 +682,13 @@
 								"exportQuality": 0.8,
 								"imageSpriteId": 3772735,
 								"useCollisionPoly": true,
+								"imagePoints": [
+									{
+										"name": "Image Point 1",
+										"x": 0.5789473684210527,
+										"y": 0.6944444444444444
+									}
+								],
 								"duration": 1,
 								"tag": ""
 							}
@@ -706,6 +713,13 @@
 								"exportQuality": 0.8,
 								"imageSpriteId": 5943949,
 								"useCollisionPoly": true,
+								"imagePoints": [
+									{
+										"name": "Image Point 1",
+										"x": 0.9583333333333334,
+										"y": 0.6666666666666666
+									}
+								],
 								"duration": 1,
 								"tag": ""
 							}
@@ -730,6 +744,13 @@
 								"exportQuality": 0.8,
 								"imageSpriteId": 2648633,
 								"useCollisionPoly": true,
+								"imagePoints": [
+									{
+										"name": "Image Point 1",
+										"x": 0.875,
+										"y": 0.5833333333333334
+									}
+								],
 								"duration": 1,
 								"tag": ""
 							}
@@ -754,6 +775,13 @@
 								"exportQuality": 0.8,
 								"imageSpriteId": 9623162,
 								"useCollisionPoly": true,
+								"imagePoints": [
+									{
+										"name": "Image Point 1",
+										"x": 0.7894736842105263,
+										"y": 0.3333333333333333
+									}
+								],
 								"duration": 1,
 								"tag": ""
 							}
@@ -778,6 +806,13 @@
 								"exportQuality": 0.8,
 								"imageSpriteId": 474035,
 								"useCollisionPoly": true,
+								"imagePoints": [
+									{
+										"name": "Image Point 1",
+										"x": 0.47368421052631576,
+										"y": 0.25
+									}
+								],
 								"duration": 1,
 								"tag": ""
 							}
@@ -814,6 +849,13 @@
 									]
 								},
 								"useCollisionPoly": true,
+								"imagePoints": [
+									{
+										"name": "Image Point 1",
+										"x": 0.043478260869565216,
+										"y": 0.4444444444444444
+									}
+								],
 								"duration": 1,
 								"tag": ""
 							}
@@ -838,6 +880,13 @@
 								"exportQuality": 0.8,
 								"imageSpriteId": 3410685,
 								"useCollisionPoly": true,
+								"imagePoints": [
+									{
+										"name": "Image Point 1",
+										"x": 0.043478260869565216,
+										"y": 0.5555555555555556
+									}
+								],
 								"duration": 1,
 								"tag": ""
 							}
@@ -874,6 +923,13 @@
 									]
 								},
 								"useCollisionPoly": true,
+								"imagePoints": [
+									{
+										"name": "Image Point 1",
+										"x": 0.3157894736842105,
+										"y": 0.6666666666666666
+									}
+								],
 								"duration": 1,
 								"tag": ""
 							}

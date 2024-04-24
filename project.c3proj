@@ -1,11 +1,18 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 37900,
+	"savedWithRelease": 38800,
 	"name": "Scummoner",
 	"runtime": "c3",
-	"useWorker": "worker",
+	"useWorker": "dom",
 	"bundleAddons": true,
 	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
 		{
 			"type": "plugin",
 			"id": "Audio",
@@ -29,13 +36,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "LocalStorage",
-			"name": "Local storage",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
@@ -54,6 +54,22 @@
 			"name": "Particles",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Rex_NGIO_Authentication",
+			"name": "Authentication",
+			"author": "Rex.Rainbow/Port by Pixel Perfect Studio",
+			"bundled": true,
+			"version": "0.1.0.3"
+		},
+		{
+			"type": "plugin",
+			"id": "Rex_NGIO_Medal",
+			"name": "Medal",
+			"author": "Rex.Rainbow/Port by Pixel Perfect Studio",
+			"bundled": true,
+			"version": "0.1.0.1"
 		},
 		{
 			"type": "plugin",
@@ -239,7 +255,8 @@
 					"menuLine",
 					"menuMask",
 					"menuOption",
-					"Title"
+					"Title",
+					"tutorialKey"
 				],
 				"subfolders": [],
 				"name": "menus"
@@ -252,7 +269,6 @@
 					"Audio",
 					"textBig",
 					"textSmall",
-					"LocalStorage",
 					"Mouse",
 					"camera",
 					"npcAngle",
@@ -320,7 +336,9 @@
 					"shadowMedium",
 					"bullet",
 					"fish",
-					"dog"
+					"dog",
+					"confetti",
+					"confettiSprite"
 				],
 				"subfolders": [],
 				"name": "characters"
@@ -355,6 +373,23 @@
 				],
 				"subfolders": [],
 				"name": "terrain"
+			},
+			{
+				"items": [
+					"achievement",
+					"achievementBubble",
+					"achievements"
+				],
+				"subfolders": [],
+				"name": "achievements"
+			},
+			{
+				"items": [
+					"ngioAuth",
+					"ngioMedals"
+				],
+				"subfolders": [],
+				"name": "ngio"
 			}
 		]
 	},
@@ -365,7 +400,7 @@
 			"entities",
 			"npcs",
 			"bloods",
-			"terrain",
+			"objects",
 			"tutorials"
 		],
 		"subfolders": []
@@ -435,6 +470,70 @@
 					"name": "splat.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 657347425110227,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "yay.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 885353244867216,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "achievement.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 740335466147353,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "boioing.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 794811586322964,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "shoot.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 153442740096610,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "woosh.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 617704556702639,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "talk.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 419051340129774,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "talkMad.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 201366441214784,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "evil.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 210974574325193,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -686,16 +785,20 @@
 	},
 	"timelines": {
 		"items": [
+			"achievement",
 			"deathTimer",
 			"menuFadeIn",
 			"menuFadeOut",
 			"menuOptionSelect",
 			"npcMad",
-			"tutorial"
+			"tutorial",
+			"tutorialControls"
 		],
 		"subfolders": [
 			{
-				"items": [],
+				"items": [
+					"Immediate"
+				],
 				"subfolders": []
 			}
 		]
@@ -706,7 +809,7 @@
 	},
 	"properties": {
 		"description": "Summon things to ruin lives",
-		"version": "1.0.2",
+		"version": "1.1.0",
 		"author": "",
 		"authorEmail": "",
 		"authorWebsite": "",

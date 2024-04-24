@@ -16,6 +16,8 @@
 		"dumpster",
 		"manhole",
 		"trashCan",
-		"player"
+		"player",
+		"tutorialKey",
+		"menuSummonItem"
 	]
 }

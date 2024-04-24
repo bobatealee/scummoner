@@ -32,6 +32,27 @@
 			"sid": 140217898727246
 		},
 		{
+			"name": "madAnim",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 729678522224670
+		},
+		{
+			"name": "lifeRuined",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 556394043512060
+		},
+		{
+			"name": "special",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 122551120470120
+		},
+		{
 			"name": "onFire",
 			"type": "boolean",
 			"desc": "",
@@ -100,20 +121,6 @@
 			"desc": "",
 			"show": true,
 			"sid": 798069407249171
-		},
-		{
-			"name": "special",
-			"type": "boolean",
-			"desc": "",
-			"show": true,
-			"sid": 122551120470120
-		},
-		{
-			"name": "lifeRuined",
-			"type": "boolean",
-			"desc": "",
-			"show": true,
-			"sid": 556394043512060
 		},
 		{
 			"name": "lookX",
