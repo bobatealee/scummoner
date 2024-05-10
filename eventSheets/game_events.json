@@ -1157,10 +1157,10 @@
 						{
 							"id": "add-gain-effect",
 							"objectClass": "Audio",
-							"sid": 166116249973583,
+							"sid": 844224020073644,
 							"parameters": {
 								"tag": "\"music\"",
-								"gain": "-27.5"
+								"gain": "-30"
 							}
 						},
 						{
@@ -1629,12 +1629,12 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 965791714273304,
+									"sid": 238836000632328,
 									"parameters": {
 										"object-to-create": "bullet",
 										"layer": "\"Up\"",
-										"x": "player.ImagePointX(1)",
-										"y": "player.ImagePointY(1)",
+										"x": "player.X",
+										"y": "player.Y",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
@@ -1642,10 +1642,19 @@
 								{
 									"id": "set-angle-toward-position",
 									"objectClass": "bullet",
-									"sid": 850990263266647,
+									"sid": 145055262658381,
 									"parameters": {
 										"x": "Mouse.X",
 										"y": "Mouse.Y"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "bullet",
+									"sid": 413560965162505,
+									"parameters": {
+										"x": "player.ImagePointX(1)",
+										"y": "player.ImagePointY(1)"
 									}
 								},
 								{
@@ -2822,10 +2831,10 @@
 												{
 													"id": "add-gain-effect",
 													"objectClass": "Audio",
-													"sid": 985496407064243,
+													"sid": 951353804752031,
 													"parameters": {
 														"tag": "\"music\"",
-														"gain": "-27.5"
+														"gain": "-30"
 													}
 												},
 												{
@@ -6920,10 +6929,10 @@
 						{
 							"id": "add-gain-effect",
 							"objectClass": "Audio",
-							"sid": 199881288565661,
+							"sid": 350479739597150,
 							"parameters": {
 								"tag": "\"music\"",
-								"gain": "-27.5"
+								"gain": "-30"
 							}
 						},
 						{
@@ -9785,52 +9794,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-animation-playing",
-							"objectClass": "npcs",
-							"sid": 579390997799431,
-							"parameters": {
-								"animation": "\"dummyGunGrab_SW\""
-							}
-						},
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "npcs",
-							"sid": 650045230786911,
-							"parameters": {
-								"comparison": 0,
-								"number": "3"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "tilemap",
-							"sid": 124414814170680,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-tile",
-							"objectClass": "tilemap",
-							"sid": 749400797726214,
-							"parameters": {
-								"tile-x": "56",
-								"tile-y": "59",
-								"tile": "151",
-								"state": "normal"
-							}
-						}
-					],
-					"sid": 440395296742109
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "on-animation-finished",
 							"objectClass": "npcs",
 							"sid": 654207812449867,
@@ -10140,10 +10103,10 @@
 						{
 							"id": "add-gain-effect",
 							"objectClass": "Audio",
-							"sid": 974999907252465,
+							"sid": 249661109045314,
 							"parameters": {
 								"tag": "\"music\"",
-								"gain": "-27.5"
+								"gain": "-30"
 							}
 						},
 						{
@@ -10444,10 +10407,10 @@
 						{
 							"id": "add-gain-effect",
 							"objectClass": "Audio",
-							"sid": 200802134701648,
+							"sid": 536660108405704,
 							"parameters": {
 								"tag": "\"music\"",
-								"gain": "-27.5"
+								"gain": "-30"
 							}
 						},
 						{
@@ -10845,10 +10808,10 @@
 				{
 					"id": "add-gain-effect",
 					"objectClass": "Audio",
-					"sid": 113769070244747,
+					"sid": 233048396218539,
 					"parameters": {
 						"tag": "\"music\"",
-						"gain": "-27.5"
+						"gain": "-30"
 					}
 				},
 				{
@@ -11137,10 +11100,10 @@
 				{
 					"id": "add-gain-effect",
 					"objectClass": "Audio",
-					"sid": 496089132515012,
+					"sid": 302851844535507,
 					"parameters": {
 						"tag": "\"music\"",
-						"gain": "-27.5"
+						"gain": "-30"
 					}
 				},
 				{
