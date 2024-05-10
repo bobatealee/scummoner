@@ -61,7 +61,7 @@
 			"name": "Authentication",
 			"author": "Rex.Rainbow/Port by Pixel Perfect Studio",
 			"bundled": true,
-			"version": "0.1.0.3"
+			"version": "0.1.0.4"
 		},
 		{
 			"type": "plugin",
@@ -809,7 +809,7 @@
 	},
 	"properties": {
 		"description": "Summon things to ruin lives",
-		"version": "1.1.2",
+		"version": "1.1.3",
 		"author": "",
 		"authorEmail": "",
 		"authorWebsite": "",
