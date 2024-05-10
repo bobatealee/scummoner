@@ -22,6 +22,16 @@
 			"sid": 520208073197253
 		},
 		{
+			"eventType": "variable",
+			"name": "GAME_tutorialSkipped",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 444913684120963
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "GLOBAL"
 		},
@@ -166,18 +176,6 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 142481522625025,
-					"parameters": {
-						"audio-file": "click",
-						"loop": "not-looping",
-						"volume": "log10(SETTING_soundVolume)*20",
-						"stereo-pan": "0",
-						"tag-optional": "\"sound\""
-					}
-				},
-				{
 					"id": "start-animation",
 					"objectClass": "tutorialKey",
 					"sid": 933630770245310,
@@ -186,7 +184,38 @@
 					}
 				}
 			],
-			"sid": 738655397749225
+			"sid": 738655397749225,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 809347844946041,
+							"parameters": {
+								"variable": "GAME_tutorialSkipped"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 795361537547967,
+							"parameters": {
+								"audio-file": "click",
+								"loop": "not-looping",
+								"volume": "log10(SETTING_soundVolume)*20",
+								"stereo-pan": "0",
+								"tag-optional": "\"sound\""
+							}
+						}
+					],
+					"sid": 722256994168734
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -298,21 +327,40 @@
 						"layer": "\"Step1\"",
 						"visibility": "visible"
 					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 946490159709111,
-					"parameters": {
-						"audio-file": "click",
-						"loop": "not-looping",
-						"volume": "log10(SETTING_soundVolume)*20",
-						"stereo-pan": "0",
-						"tag-optional": "\"sound\""
-					}
 				}
 			],
-			"sid": 886014357483360
+			"sid": 886014357483360,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 707689330609012,
+							"parameters": {
+								"variable": "GAME_tutorialSkipped"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 818264962729356,
+							"parameters": {
+								"audio-file": "click",
+								"loop": "not-looping",
+								"volume": "log10(SETTING_soundVolume)*20",
+								"stereo-pan": "0",
+								"tag-optional": "\"sound\""
+							}
+						}
+					],
+					"sid": 708069796287448
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -342,21 +390,40 @@
 						"layer": "\"Step2\"",
 						"visibility": "visible"
 					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 237475235225801,
-					"parameters": {
-						"audio-file": "click",
-						"loop": "not-looping",
-						"volume": "log10(SETTING_soundVolume)*20",
-						"stereo-pan": "0",
-						"tag-optional": "\"sound\""
-					}
 				}
 			],
-			"sid": 116107606493590
+			"sid": 116107606493590,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 257686060175058,
+							"parameters": {
+								"variable": "GAME_tutorialSkipped"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 657993658692863,
+							"parameters": {
+								"audio-file": "click",
+								"loop": "not-looping",
+								"volume": "log10(SETTING_soundVolume)*20",
+								"stereo-pan": "0",
+								"tag-optional": "\"sound\""
+							}
+						}
+					],
+					"sid": 881919445044707
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -386,21 +453,40 @@
 						"layer": "\"Step3\"",
 						"visibility": "visible"
 					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 730821349847262,
-					"parameters": {
-						"audio-file": "click",
-						"loop": "not-looping",
-						"volume": "log10(SETTING_soundVolume)*20",
-						"stereo-pan": "0",
-						"tag-optional": "\"sound\""
-					}
 				}
 			],
-			"sid": 224572084516351
+			"sid": 224572084516351,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 902938997056274,
+							"parameters": {
+								"variable": "GAME_tutorialSkipped"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 993492055417011,
+							"parameters": {
+								"audio-file": "click",
+								"loop": "not-looping",
+								"volume": "log10(SETTING_soundVolume)*20",
+								"stereo-pan": "0",
+								"tag-optional": "\"sound\""
+							}
+						}
+					],
+					"sid": 585460686188140
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -569,15 +655,16 @@
 				{
 					"id": "set-y",
 					"objectClass": "textSmall",
-					"sid": 737408956581216,
+					"sid": 885999039329706,
 					"parameters": {
-						"y": "Self.Y+(tutorialKey.AnimationFrame ? 2 : -2)"
+						"y": "Self.Y+(tutorialKey.AnimationFrame ? 1 : -1)"
 					}
 				},
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
 					"sid": 709412318527814,
+					"disabled": true,
 					"parameters": {
 						"variable": "GAME_tutorialControls",
 						"value": "1"
@@ -686,6 +773,31 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 417064831304678,
+					"parameters": {
+						"variable": "GAME_tutorialSkipped"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 986445788392986,
+					"parameters": {
+						"variable": "GAME_tutorialSkipped",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 595744648357588
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
 					"sid": 465614886406815,
@@ -711,7 +823,93 @@
 						{
 							"id": "is-playing-by-tags",
 							"objectClass": "TimelineController",
-							"sid": 154855973646150,
+							"sid": 281131194997877,
+							"parameters": {
+								"tags": "\"tutorialControls\""
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 100789307083789,
+							"parameters": {
+								"variable": "GAME_tutorialSkipped"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-timeline-time-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 445347485257142,
+							"parameters": {
+								"tags": "\"tutorialControls\"",
+								"time": "2.5"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 750917125398869,
+							"parameters": {
+								"variable": "GAME_tutorialSkipped",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 809161638899591
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 326033129341289,
+							"parameters": {
+								"tags": "\"tutorial\""
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 349549986932511,
+							"parameters": {
+								"variable": "GAME_tutorialSkipped"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-timeline-time-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 138895587850715,
+							"parameters": {
+								"tags": "\"tutorial\"",
+								"time": "5"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 252286001984019,
+							"parameters": {
+								"variable": "GAME_tutorialSkipped",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 957959674518152
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 365194040490165,
 							"parameters": {
 								"tags": "\"menuFadeIn\""
 							},
@@ -720,9 +918,18 @@
 						{
 							"id": "is-playing-by-tags",
 							"objectClass": "TimelineController",
-							"sid": 671048509652145,
+							"sid": 989204558110256,
 							"parameters": {
 								"tags": "\"menuFadeOut\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 987026391681451,
+							"parameters": {
+								"variable": "GAME_tutorialSkipped"
 							},
 							"isInverted": true
 						}
@@ -731,14 +938,14 @@
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 658108493927864,
+							"sid": 329569727021464,
 							"parameters": {
 								"variable": "MENU_selected",
 								"value": "false"
 							}
 						}
 					],
-					"sid": 866830164143188,
+					"sid": 159331454688419,
 					"children": [
 						{
 							"eventType": "block",
@@ -746,7 +953,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 978697635652247,
+									"sid": 789721120326163,
 									"parameters": {
 										"variable": "MENU_current",
 										"comparison": 0,
@@ -755,7 +962,7 @@
 								}
 							],
 							"actions": [],
-							"sid": 620510297757828,
+							"sid": 590852079555611,
 							"children": [
 								{
 									"eventType": "comment",
@@ -767,7 +974,7 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 896609195707843,
+											"sid": 487469748860141,
 											"parameters": {
 												"variable": "MENU_option",
 												"comparison": 0,
@@ -777,7 +984,7 @@
 										{
 											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 790293775208369,
+											"sid": 871477223479582,
 											"parameters": {
 												"variable": "MENU_selected"
 											},
@@ -786,7 +993,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 483340051231966,
+											"sid": 561739755069924,
 											"parameters": {
 												"first-value": "TimelineController.Value(\"tutorialControls\", \"tutorialControls\")",
 												"comparison": 5,
@@ -798,7 +1005,7 @@
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 644171013726438,
+											"sid": 863489219172668,
 											"parameters": {
 												"variable": "MENU_selected",
 												"value": "true"
@@ -807,7 +1014,7 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 691859203503484,
+											"sid": 942140189347280,
 											"parameters": {
 												"layer": "\"Controls\"",
 												"visibility": "invisible"
@@ -816,7 +1023,7 @@
 										{
 											"id": "play",
 											"objectClass": "Audio",
-											"sid": 312469911853805,
+											"sid": 599100856348278,
 											"parameters": {
 												"audio-file": "click",
 												"loop": "not-looping",
@@ -828,7 +1035,7 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 557345618280091,
+											"sid": 884173658917919,
 											"parameters": {
 												"layer": "\"MenuTutorialControls\"",
 												"visibility": "invisible"
@@ -837,7 +1044,7 @@
 										{
 											"id": "play-timeline",
 											"objectClass": "TimelineController",
-											"sid": 513293525785737,
+											"sid": 150241140410285,
 											"parameters": {
 												"timeline": "tutorial",
 												"tags": "\"tutorial\""
@@ -846,7 +1053,7 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 387893274544859,
+											"sid": 591123155404778,
 											"parameters": {
 												"variable": "MENU_current",
 												"value": "\"Tutorial\""
@@ -855,7 +1062,7 @@
 										{
 											"id": "set-visible",
 											"objectClass": "textBig",
-											"sid": 766772647041368,
+											"sid": 833059923215824,
 											"parameters": {
 												"visibility": "invisible"
 											}
@@ -863,13 +1070,13 @@
 										{
 											"id": "set-text",
 											"objectClass": "textBig",
-											"sid": 886388129190371,
+											"sid": 105810429711437,
 											"parameters": {
 												"text": "\"HOW TO PLAY SCUMMONER\""
 											}
 										}
 									],
-									"sid": 471871089454118
+									"sid": 818916759197049
 								}
 							]
 						},
@@ -879,7 +1086,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 221637858150740,
+									"sid": 203237259935999,
 									"parameters": {
 										"variable": "MENU_current",
 										"comparison": 0,
@@ -888,7 +1095,7 @@
 								}
 							],
 							"actions": [],
-							"sid": 863519202102835,
+							"sid": 104741967422252,
 							"children": [
 								{
 									"eventType": "comment",
@@ -900,7 +1107,7 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 279340866142462,
+											"sid": 569660061059431,
 											"parameters": {
 												"variable": "MENU_option",
 												"comparison": 0,
@@ -910,7 +1117,7 @@
 										{
 											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 203339261008102,
+											"sid": 598568048832067,
 											"parameters": {
 												"variable": "MENU_selected"
 											},
@@ -919,7 +1126,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 136630847679997,
+											"sid": 524134077486686,
 											"parameters": {
 												"first-value": "TimelineController.Value(\"tutorial\", \"tutorial\")",
 												"comparison": 5,
@@ -931,7 +1138,7 @@
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 775138870374165,
+											"sid": 585145341129764,
 											"parameters": {
 												"variable": "MENU_selected",
 												"value": "true"
@@ -940,7 +1147,7 @@
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 562279086989414,
+											"sid": 622681684230932,
 											"parameters": {
 												"variable": "GAME_inMenu",
 												"value": "false"
@@ -949,7 +1156,7 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 293543274464244,
+											"sid": 422698279636732,
 											"parameters": {
 												"variable": "MENU_option",
 												"value": "0"
@@ -958,7 +1165,7 @@
 										{
 											"id": "play",
 											"objectClass": "Audio",
-											"sid": 251923653096304,
+											"sid": 845580892253325,
 											"parameters": {
 												"audio-file": "click",
 												"loop": "not-looping",
@@ -970,12 +1177,12 @@
 										{
 											"id": "destroy",
 											"objectClass": "menuFade",
-											"sid": 620031587356468
+											"sid": 185601440140100
 										},
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 356210308837843,
+											"sid": 993592104196637,
 											"parameters": {
 												"object-to-create": "menuFade",
 												"layer": "\"Fade\"",
@@ -988,7 +1195,7 @@
 										{
 											"id": "set-instance",
 											"objectClass": "TimelineController",
-											"sid": 172304048968478,
+											"sid": 595389339968676,
 											"parameters": {
 												"object-class": "menuFade",
 												"track-id": "\"menuFadeOut\""
@@ -997,14 +1204,14 @@
 										{
 											"id": "play-timeline",
 											"objectClass": "TimelineController",
-											"sid": 190632225641680,
+											"sid": 948981506659329,
 											"parameters": {
 												"timeline": "menuFadeOut",
 												"tags": "\"menuFadeOut\""
 											}
 										}
 									],
-									"sid": 913083465872148
+									"sid": 406281469628214
 								}
 							]
 						}

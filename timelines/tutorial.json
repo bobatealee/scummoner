@@ -6,7 +6,7 @@
 	"ease": "noease",
 	"pathMode": "line",
 	"resizeMode": "size",
-	"playheadTime": 4.7,
+	"playheadTime": 1.4,
 	"totalTime": 7,
 	"stepTime": 0.1,
 	"useStepTime": true,
@@ -39,31 +39,31 @@
 					"ease": "default"
 				},
 				{
-					"time": 1,
+					"time": 0.5,
 					"tags": "",
 					"enabled": true,
 					"ease": "default"
 				},
 				{
-					"time": 3,
+					"time": 1.5,
 					"tags": "",
 					"enabled": true,
 					"ease": "default"
 				},
 				{
-					"time": 4,
+					"time": 2.5,
+					"tags": "",
+					"enabled": true,
+					"ease": "default"
+				},
+				{
+					"time": 3.5,
 					"tags": "",
 					"enabled": true,
 					"ease": "default"
 				},
 				{
 					"time": 5,
-					"tags": "",
-					"enabled": true,
-					"ease": "default"
-				},
-				{
-					"time": 7,
 					"tags": "",
 					"enabled": true,
 					"ease": "default"
@@ -90,7 +90,7 @@
 							"addons": []
 						},
 						{
-							"time": 1,
+							"time": 0.5,
 							"enabled": true,
 							"ease": "default",
 							"value": 1,
@@ -99,7 +99,7 @@
 							"addons": []
 						},
 						{
-							"time": 3,
+							"time": 1.5,
 							"enabled": true,
 							"ease": "default",
 							"value": 2,
@@ -108,7 +108,7 @@
 							"addons": []
 						},
 						{
-							"time": 4,
+							"time": 2.5,
 							"enabled": true,
 							"ease": "default",
 							"value": 3,
@@ -117,7 +117,7 @@
 							"addons": []
 						},
 						{
-							"time": 5,
+							"time": 3.5,
 							"enabled": true,
 							"ease": "default",
 							"value": 4,
@@ -126,7 +126,7 @@
 							"addons": []
 						},
 						{
-							"time": 7,
+							"time": 5,
 							"enabled": true,
 							"ease": "default",
 							"value": 5,

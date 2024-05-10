@@ -6,8 +6,8 @@
 	"ease": "noease",
 	"pathMode": "line",
 	"resizeMode": "size",
-	"playheadTime": 4.7,
-	"totalTime": 5,
+	"playheadTime": 1.5,
+	"totalTime": 3,
 	"stepTime": 0.1,
 	"useStepTime": true,
 	"showingInterpolationModes": false,
@@ -39,19 +39,19 @@
 					"ease": "default"
 				},
 				{
-					"time": 1,
+					"time": 0.5,
 					"tags": "",
 					"enabled": true,
 					"ease": "default"
 				},
 				{
-					"time": 2,
+					"time": 1.5,
 					"tags": "",
 					"enabled": true,
 					"ease": "default"
 				},
 				{
-					"time": 5,
+					"time": 2.5,
 					"tags": "",
 					"enabled": true,
 					"ease": "default"
@@ -78,7 +78,7 @@
 							"addons": []
 						},
 						{
-							"time": 1,
+							"time": 0.5,
 							"enabled": true,
 							"ease": "default",
 							"value": 1,
@@ -87,7 +87,7 @@
 							"addons": []
 						},
 						{
-							"time": 2,
+							"time": 1.5,
 							"enabled": true,
 							"ease": "default",
 							"value": 2,
@@ -96,7 +96,7 @@
 							"addons": []
 						},
 						{
-							"time": 5,
+							"time": 2.5,
 							"enabled": true,
 							"ease": "default",
 							"value": 3,

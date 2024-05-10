@@ -121,7 +121,7 @@
 			"type": "achievements",
 			"properties": {
 				"width": 10,
-				"height": 1,
+				"height": 2,
 				"depth": 1
 			},
 			"uid": 360,

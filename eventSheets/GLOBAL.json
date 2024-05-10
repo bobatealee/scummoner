@@ -2941,41 +2941,6 @@
 									"sid": 410427980346753
 								}
 							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "menuOption",
-									"sid": 215975264695656,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "1"
-									}
-								},
-								{
-									"id": "is-on-layer",
-									"objectClass": "menuOption",
-									"sid": 626619860352705,
-									"parameters": {
-										"layer": "\"MenuPause\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "menuOption",
-									"sid": 944783405855313,
-									"parameters": {
-										"text": "\"Save\""
-									}
-								}
-							],
-							"sid": 738573147043042,
-							"disabled": true
 						}
 					]
 				},

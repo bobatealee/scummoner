@@ -402,9 +402,9 @@
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 360345846577611,
+											"sid": 591810951180009,
 											"parameters": {
-												"variable": "SAVED_NGIO_medals",
+												"variable": "NGIO_medals",
 												"value": "true"
 											}
 										}
@@ -467,12 +467,16 @@
 					"sid": 981599319514634,
 					"children": [
 						{
+							"eventType": "comment",
+							"text": "Newgrounds check"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 210805880602657,
+									"sid": 725385361153132,
 									"parameters": {
 										"first-value": "find(RegexMatchAt(Browser.URL, \"^.+?[^\\/:](?=[?\\/]|$)\", \"gi\", 0), \"newgrounds.com\")",
 										"comparison": 5,
@@ -480,13 +484,23 @@
 									}
 								},
 								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 573599951003368,
+									"parameters": {
+										"first-value": "find(RegexMatchAt(Browser.URL, \"^.+?[^\\/:](?=[?\\/]|$)\", \"gi\", 0), \"ungrounded.net\")",
+										"comparison": 5,
+										"second-value": "0"
+									}
+								},
+								{
 									"id": "is-in-preview",
 									"objectClass": "System",
-									"sid": 162966816692710
+									"sid": 117208828140662
 								}
 							],
 							"actions": [],
-							"sid": 537584295598772,
+							"sid": 779064953367701,
 							"children": [
 								{
 									"eventType": "block",
@@ -494,7 +508,7 @@
 										{
 											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 334295415429567,
+											"sid": 363496626368204,
 											"parameters": {
 												"variable": "NGIO_init"
 											},
@@ -505,19 +519,19 @@
 										{
 											"id": "login",
 											"objectClass": "ngioAuth",
-											"sid": 488115500796237
+											"sid": 502272356794020
 										},
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 575156849806512,
+											"sid": 332287739667269,
 											"parameters": {
 												"variable": "NGIO_init",
 												"value": "true"
 											}
 										}
 									],
-									"sid": 875599926272030
+									"sid": 541243711677724
 								}
 							],
 							"isOrBlock": true
@@ -583,6 +597,16 @@
 										"y": "0",
 										"value": "ngioMedals.CurMedalID"
 									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "achievements",
+									"sid": 290373857508188,
+									"parameters": {
+										"x": "ngioMedals.LoopIndex",
+										"y": "1",
+										"value": "ngioMedals.CurMedalIsUnlocked"
+									}
 								}
 							],
 							"sid": 558233587276317
@@ -620,6 +644,7 @@
 									"id": "is-in-preview",
 									"objectClass": "System",
 									"sid": 490906315968840,
+									"disabled": true,
 									"isInverted": true
 								}
 							],
@@ -691,9 +716,9 @@
 						{
 							"id": "set-y",
 							"objectClass": "textSmall",
-							"sid": 661399198174296,
+							"sid": 146248834577037,
 							"parameters": {
-								"y": "Self.Y+(tutorialKey.AnimationFrame ? 2 : -2)"
+								"y": "Self.Y+(tutorialKey.AnimationFrame ? 1 : -1)"
 							}
 						}
 					],

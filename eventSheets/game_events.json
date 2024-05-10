@@ -1214,25 +1214,27 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 685783614093464,
+									"sid": 295455928957413,
 									"parameters": {
 										"variable": "NGIO_medals"
 									}
 								},
 								{
-									"id": "index-to-medal-is-unlocked",
-									"objectClass": "ngioMedals",
-									"sid": 784682984076672,
+									"id": "compare-at-xy",
+									"objectClass": "achievements",
+									"sid": 614497041180145,
 									"parameters": {
-										"index0": "achievements.IndexOf(78447)"
-									},
-									"isInverted": true
+										"x": "achievements.IndexOf(78447)",
+										"y": "1",
+										"comparison": 1,
+										"value": "1"
+									}
 								}
 							],
 							"actions": [
 								{
 									"callFunction": "achievement",
-									"sid": 279356996018386,
+									"sid": 747897412867134,
 									"parameters": [
 										"3",
 										"\"Clocked Out\"",
@@ -1242,13 +1244,23 @@
 								{
 									"id": "unlock",
 									"objectClass": "ngioMedals",
-									"sid": 572855045674417,
+									"sid": 126831197632160,
 									"parameters": {
 										"id0": "78447"
 									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "achievements",
+									"sid": 604385789471239,
+									"parameters": {
+										"x": "achievements.IndexOf(78447)",
+										"y": "1",
+										"value": "1"
+									}
 								}
 							],
-							"sid": 800215897938157
+							"sid": 758196546589486
 						}
 					]
 				}
@@ -2934,13 +2946,15 @@
 															}
 														},
 														{
-															"id": "index-to-medal-is-unlocked",
-															"objectClass": "ngioMedals",
-															"sid": 755989419886159,
+															"id": "compare-at-xy",
+															"objectClass": "achievements",
+															"sid": 284842097006715,
 															"parameters": {
-																"index0": "achievements.IndexOf(78444)"
-															},
-															"isInverted": true
+																"x": "achievements.IndexOf(78444)",
+																"y": "1",
+																"comparison": 1,
+																"value": "1"
+															}
 														}
 													],
 													"actions": [
@@ -2959,6 +2973,16 @@
 															"sid": 659828881978134,
 															"parameters": {
 																"id0": "78444"
+															}
+														},
+														{
+															"id": "set-at-xy",
+															"objectClass": "achievements",
+															"sid": 343157281678460,
+															"parameters": {
+																"x": "achievements.IndexOf(78444)",
+																"y": "1",
+																"value": "1"
 															}
 														}
 													],
@@ -3264,25 +3288,27 @@
 														{
 															"id": "compare-boolean-eventvar",
 															"objectClass": "System",
-															"sid": 621270097339513,
+															"sid": 942772106629434,
 															"parameters": {
 																"variable": "NGIO_medals"
 															}
 														},
 														{
-															"id": "index-to-medal-is-unlocked",
-															"objectClass": "ngioMedals",
-															"sid": 159332608605304,
+															"id": "compare-at-xy",
+															"objectClass": "achievements",
+															"sid": 952458416605093,
 															"parameters": {
-																"index0": "achievements.IndexOf(78449)"
-															},
-															"isInverted": true
+																"x": "achievements.IndexOf(78449)",
+																"y": "1",
+																"comparison": 1,
+																"value": "1"
+															}
 														}
 													],
 													"actions": [
 														{
 															"callFunction": "achievement",
-															"sid": 245420648115210,
+															"sid": 332433370812725,
 															"parameters": [
 																"5",
 																"\"Maladjusted\"",
@@ -3292,13 +3318,23 @@
 														{
 															"id": "unlock",
 															"objectClass": "ngioMedals",
-															"sid": 108140080294872,
+															"sid": 406631936411504,
 															"parameters": {
 																"id0": "78449"
 															}
+														},
+														{
+															"id": "set-at-xy",
+															"objectClass": "achievements",
+															"sid": 488577559344497,
+															"parameters": {
+																"x": "achievements.IndexOf(78449)",
+																"y": "1",
+																"value": "1"
+															}
 														}
 													],
-													"sid": 741326061988795
+													"sid": 362076163902998
 												}
 											]
 										},
@@ -3909,25 +3945,27 @@
 														{
 															"id": "compare-boolean-eventvar",
 															"objectClass": "System",
-															"sid": 355287858095599,
+															"sid": 306964630498746,
 															"parameters": {
 																"variable": "NGIO_medals"
 															}
 														},
 														{
-															"id": "index-to-medal-is-unlocked",
-															"objectClass": "ngioMedals",
-															"sid": 752395847060288,
+															"id": "compare-at-xy",
+															"objectClass": "achievements",
+															"sid": 992074450454706,
 															"parameters": {
-																"index0": "achievements.IndexOf(78450)"
-															},
-															"isInverted": true
+																"x": "achievements.IndexOf(78450)",
+																"y": "1",
+																"comparison": 1,
+																"value": "1"
+															}
 														}
 													],
 													"actions": [
 														{
 															"callFunction": "achievement",
-															"sid": 876726395172203,
+															"sid": 235357863768983,
 															"parameters": [
 																"6",
 																"\"Nice Catch\"",
@@ -3937,13 +3975,23 @@
 														{
 															"id": "unlock",
 															"objectClass": "ngioMedals",
-															"sid": 836891048079983,
+															"sid": 278772692533141,
 															"parameters": {
 																"id0": "78450"
 															}
+														},
+														{
+															"id": "set-at-xy",
+															"objectClass": "achievements",
+															"sid": 975551271773911,
+															"parameters": {
+																"x": "achievements.IndexOf(78450)",
+																"y": "1",
+																"value": "1"
+															}
 														}
 													],
-													"sid": 756027998860302
+													"sid": 542401325131554
 												}
 											]
 										}
@@ -5306,25 +5354,27 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 822601124880150,
+									"sid": 534024254636743,
 									"parameters": {
 										"variable": "NGIO_medals"
 									}
 								},
 								{
-									"id": "index-to-medal-is-unlocked",
-									"objectClass": "ngioMedals",
-									"sid": 145161316321358,
+									"id": "compare-at-xy",
+									"objectClass": "achievements",
+									"sid": 183372208758981,
 									"parameters": {
-										"index0": "achievements.IndexOf(78449)"
-									},
-									"isInverted": true
+										"x": "achievements.IndexOf(78449)",
+										"y": "1",
+										"comparison": 1,
+										"value": "1"
+									}
 								}
 							],
 							"actions": [
 								{
 									"callFunction": "achievement",
-									"sid": 319070204636764,
+									"sid": 977699447799735,
 									"parameters": [
 										"5",
 										"\"Maladjusted\"",
@@ -5334,13 +5384,23 @@
 								{
 									"id": "unlock",
 									"objectClass": "ngioMedals",
-									"sid": 683917321877017,
+									"sid": 561919207069211,
 									"parameters": {
 										"id0": "78449"
 									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "achievements",
+									"sid": 793751035349546,
+									"parameters": {
+										"x": "achievements.IndexOf(78449)",
+										"y": "1",
+										"value": "1"
+									}
 								}
 							],
-							"sid": 573604223475843
+							"sid": 846148359800864
 						}
 					]
 				},
@@ -6934,25 +6994,27 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 992637780900352,
+									"sid": 708858959444390,
 									"parameters": {
 										"variable": "NGIO_medals"
 									}
 								},
 								{
-									"id": "index-to-medal-is-unlocked",
-									"objectClass": "ngioMedals",
-									"sid": 859202910771297,
+									"id": "compare-at-xy",
+									"objectClass": "achievements",
+									"sid": 321806695047015,
 									"parameters": {
-										"index0": "achievements.IndexOf(78445)"
-									},
-									"isInverted": true
+										"x": "achievements.IndexOf(78445)",
+										"y": "1",
+										"comparison": 1,
+										"value": "1"
+									}
 								}
 							],
 							"actions": [
 								{
 									"callFunction": "achievement",
-									"sid": 366517571164129,
+									"sid": 779390483442371,
 									"parameters": [
 										"1",
 										"\"Inattentive\"",
@@ -6962,13 +7024,54 @@
 								{
 									"id": "unlock",
 									"objectClass": "ngioMedals",
-									"sid": 428128983623950,
+									"sid": 109637109719674,
 									"parameters": {
 										"id0": "78445"
 									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "achievements",
+									"sid": 988644602582454,
+									"parameters": {
+										"x": "achievements.IndexOf(78445)",
+										"y": "1",
+										"value": "1"
+									}
 								}
 							],
-							"sid": 371086880539924
+							"sid": 203330623948394
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "npcs",
+									"sid": 585439105615669,
+									"parameters": {
+										"instance-variable": "sprite",
+										"comparison": 0,
+										"value": "\"dummyGun\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 295016801310285,
+									"parameters": {
+										"object-to-create": "gunFloor",
+										"layer": "\"Down\"",
+										"x": "boulder.X",
+										"y": "boulder.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 814154118224736
 						}
 					]
 				},
@@ -10146,25 +10249,27 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 758051540710283,
+									"sid": 356971954887086,
 									"parameters": {
 										"variable": "NGIO_medals"
 									}
 								},
 								{
-									"id": "index-to-medal-is-unlocked",
-									"objectClass": "ngioMedals",
-									"sid": 124403773941394,
+									"id": "compare-at-xy",
+									"objectClass": "achievements",
+									"sid": 246030966354920,
 									"parameters": {
-										"index0": "achievements.IndexOf(78448)"
-									},
-									"isInverted": true
+										"x": "achievements.IndexOf(78448)",
+										"y": "1",
+										"comparison": 1,
+										"value": "1"
+									}
 								}
 							],
 							"actions": [
 								{
 									"callFunction": "achievement",
-									"sid": 451035187942980,
+									"sid": 608071225616679,
 									"parameters": [
 										"4",
 										"\"Agitator\"",
@@ -10174,13 +10279,23 @@
 								{
 									"id": "unlock",
 									"objectClass": "ngioMedals",
-									"sid": 556563692728482,
+									"sid": 383792103021831,
 									"parameters": {
 										"id0": "78448"
 									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "achievements",
+									"sid": 879543396448485,
+									"parameters": {
+										"x": "achievements.IndexOf(78448)",
+										"y": "1",
+										"value": "1"
+									}
 								}
 							],
-							"sid": 152483448632981
+							"sid": 916025605132170
 						}
 					]
 				},
@@ -10386,25 +10501,27 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 813921049886641,
+									"sid": 604861245390477,
 									"parameters": {
 										"variable": "NGIO_medals"
 									}
 								},
 								{
-									"id": "index-to-medal-is-unlocked",
-									"objectClass": "ngioMedals",
-									"sid": 761284488840714,
+									"id": "compare-at-xy",
+									"objectClass": "achievements",
+									"sid": 124546335074329,
 									"parameters": {
-										"index0": "achievements.IndexOf(78446)"
-									},
-									"isInverted": true
+										"x": "achievements.IndexOf(78446)",
+										"y": "1",
+										"comparison": 1,
+										"value": "1"
+									}
 								}
 							],
 							"actions": [
 								{
 									"callFunction": "achievement",
-									"sid": 619729012326551,
+									"sid": 713831997832310,
 									"parameters": [
 										"2",
 										"\"Pitfall\"",
@@ -10414,13 +10531,23 @@
 								{
 									"id": "unlock",
 									"objectClass": "ngioMedals",
-									"sid": 961322081350843,
+									"sid": 944116668805998,
 									"parameters": {
 										"id0": "78446"
 									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "achievements",
+									"sid": 246516952463038,
+									"parameters": {
+										"x": "achievements.IndexOf(78446)",
+										"y": "1",
+										"value": "1"
+									}
 								}
 							],
-							"sid": 536382297358959
+							"sid": 343274968754806
 						}
 					]
 				},
@@ -10546,25 +10673,27 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 639708035340353,
+									"sid": 777415883138524,
 									"parameters": {
 										"variable": "NGIO_medals"
 									}
 								},
 								{
-									"id": "index-to-medal-is-unlocked",
-									"objectClass": "ngioMedals",
-									"sid": 451040001794253,
+									"id": "compare-at-xy",
+									"objectClass": "achievements",
+									"sid": 343438960476359,
 									"parameters": {
-										"index0": "achievements.IndexOf(78451)"
-									},
-									"isInverted": true
+										"x": "achievements.IndexOf(78451)",
+										"y": "1",
+										"comparison": 1,
+										"value": "1"
+									}
 								}
 							],
 							"actions": [
 								{
 									"callFunction": "achievement",
-									"sid": 288098093933358,
+									"sid": 714896089030592,
 									"parameters": [
 										"7",
 										"\"GUN\"",
@@ -10574,13 +10703,23 @@
 								{
 									"id": "unlock",
 									"objectClass": "ngioMedals",
-									"sid": 775192893366310,
+									"sid": 305467066925669,
 									"parameters": {
 										"id0": "78451"
 									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "achievements",
+									"sid": 774054127485266,
+									"parameters": {
+										"x": "achievements.IndexOf(78451)",
+										"y": "1",
+										"value": "1"
+									}
 								}
 							],
-							"sid": 882486952023828
+							"sid": 756538347705653
 						}
 					]
 				}
@@ -10828,25 +10967,27 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 367537823321528,
+							"sid": 268799358783680,
 							"parameters": {
 								"variable": "NGIO_medals"
 							}
 						},
 						{
-							"id": "index-to-medal-is-unlocked",
-							"objectClass": "ngioMedals",
-							"sid": 834646972697856,
+							"id": "compare-at-xy",
+							"objectClass": "achievements",
+							"sid": 364897594176651,
 							"parameters": {
-								"index0": "achievements.IndexOf(78452)"
-							},
-							"isInverted": true
+								"x": "achievements.IndexOf(78452)",
+								"y": "1",
+								"comparison": 1,
+								"value": "1"
+							}
 						}
 					],
 					"actions": [
 						{
 							"callFunction": "achievement",
-							"sid": 314055409710430,
+							"sid": 542738253599037,
 							"parameters": [
 								"8",
 								"\"Genocide\"",
@@ -10856,13 +10997,23 @@
 						{
 							"id": "unlock",
 							"objectClass": "ngioMedals",
-							"sid": 188345838267082,
+							"sid": 818536195622442,
 							"parameters": {
 								"id0": "78452"
 							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "achievements",
+							"sid": 965639245545080,
+							"parameters": {
+								"x": "achievements.IndexOf(78452)",
+								"y": "1",
+								"value": "1"
+							}
 						}
 					],
-					"sid": 235224476628424
+					"sid": 159611284527349
 				}
 			]
 		},
@@ -11108,25 +11259,27 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 252668360443868,
+							"sid": 266194267217962,
 							"parameters": {
 								"variable": "NGIO_medals"
 							}
 						},
 						{
-							"id": "index-to-medal-is-unlocked",
-							"objectClass": "ngioMedals",
-							"sid": 998756533972169,
+							"id": "compare-at-xy",
+							"objectClass": "achievements",
+							"sid": 918413414667364,
 							"parameters": {
-								"index0": "achievements.IndexOf(78453)"
-							},
-							"isInverted": true
+								"x": "achievements.IndexOf(78453)",
+								"y": "1",
+								"comparison": 1,
+								"value": "1"
+							}
 						}
 					],
 					"actions": [
 						{
 							"callFunction": "achievement",
-							"sid": 969785554022821,
+							"sid": 281331854602317,
 							"parameters": [
 								"9",
 								"\"Sacred Duty\"",
@@ -11136,13 +11289,23 @@
 						{
 							"id": "unlock",
 							"objectClass": "ngioMedals",
-							"sid": 174897188491818,
+							"sid": 704883718019890,
 							"parameters": {
 								"id0": "78453"
 							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "achievements",
+							"sid": 342750006625353,
+							"parameters": {
+								"x": "achievements.IndexOf(78453)",
+								"y": "1",
+								"value": "1"
+							}
 						}
 					],
-					"sid": 321941400676647
+					"sid": 376834539291322
 				}
 			]
 		},
@@ -11209,31 +11372,6 @@
 				}
 			],
 			"sid": 165763581687380
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 909563967301504,
-					"parameters": {
-						"key": 32
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "achievement",
-					"sid": 113511808098241,
-					"parameters": [
-						"9",
-						"\"Sacred Duty\"",
-						"100"
-					]
-				}
-			],
-			"sid": 826299709422889
 		},
 		{
 			"functionName": "achievement",
