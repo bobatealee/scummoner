@@ -6415,6 +6415,37 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "compare-instance-variable",
+									"objectClass": "npcs",
+									"sid": 434616116359080,
+									"parameters": {
+										"instance-variable": "sprite",
+										"comparison": 0,
+										"value": "\"dummyGun\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 600258880768266,
+									"parameters": {
+										"object-to-create": "gunFloor",
+										"layer": "\"Down\"",
+										"x": "npcs.X",
+										"y": "npcs.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 443216719832607
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "for-each",
 									"objectClass": "System",
 									"sid": 867329917944260,
@@ -7041,37 +7072,6 @@
 								}
 							],
 							"sid": 203330623948394
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "npcs",
-									"sid": 585439105615669,
-									"parameters": {
-										"instance-variable": "sprite",
-										"comparison": 0,
-										"value": "\"dummyGun\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 295016801310285,
-									"parameters": {
-										"object-to-create": "gunFloor",
-										"layer": "\"Down\"",
-										"x": "boulder.X",
-										"y": "boulder.Y",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								}
-							],
-							"sid": 814154118224736
 						}
 					]
 				},
