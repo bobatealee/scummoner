@@ -6,7 +6,7 @@ Made in 72 hours for [Ludum Dare 55](https://ldjam.com/events/ludum-dare/55/scum
 
 # CREDITS
 bobatealee - Programming, Art, Sounds\
-Filippo Meozzi - Design, Sounds\
+Filippo Meozzi - Director, Sounds\
 your - Art, Design\
 Blake Spearman - Sounds\
 Lukas Calabrese - Design\
