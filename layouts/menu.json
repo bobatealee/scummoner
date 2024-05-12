@@ -475,6 +475,22 @@
 										"id": 1
 									},
 									"behaviors": {},
+									"effects": {
+										"BetterOutline": {
+											"isEnabled": true,
+											"parameters": {
+												"color": [
+													0,
+													0,
+													0,
+													1
+												],
+												"width": 1,
+												"precision-step": 1,
+												"samples": 8
+											}
+										}
+									},
 									"world": {
 										"x": 4,
 										"y": 152,
@@ -564,6 +580,22 @@
 										"id": 0
 									},
 									"behaviors": {},
+									"effects": {
+										"BetterOutline": {
+											"isEnabled": true,
+											"parameters": {
+												"color": [
+													0,
+													0,
+													0,
+													1
+												],
+												"width": 1,
+												"precision-step": 1,
+												"samples": 16
+											}
+										}
+									},
 									"world": {
 										"x": 20,
 										"y": 152,
@@ -1456,7 +1488,7 @@
 								{
 									"type": "textSmall",
 									"properties": {
-										"text": "boba - Programming, Art\nyour - Art\nFilippo Meozzi - Design, Sounds\nBlake Spearman - Sounds\nLukas Calabrese - Design\nSava Sekulich - Music\n\nMade in 72 hours for LD55",
+										"text": "boba - Programming, Art, Sounds\nFilippo Meozzi - Director, Sounds\nyour - Art, Design\nBlake Spearman - Sounds\nLukas Calabrese - Design\nSava Sekulich - Music\n\nMade in 72 hours for LD55",
 										"enable-bbcode": true,
 										"character-width": 12,
 										"character-height": 12,
@@ -1495,9 +1527,9 @@
 										}
 									},
 									"world": {
-										"x": 72,
+										"x": 64,
 										"y": 56,
-										"width": 180,
+										"width": 192,
 										"height": 92,
 										"originX": 0,
 										"originY": 0,

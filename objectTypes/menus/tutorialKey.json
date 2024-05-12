@@ -13,7 +13,12 @@
 		}
 	],
 	"behaviorTypes": [],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "skymen_BetterOutline",
+			"name": "BetterOutline"
+		}
+	],
 	"animations": {
 		"items": [
 			{

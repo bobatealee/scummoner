@@ -116,6 +116,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 72,
 								"y": 52,
@@ -147,6 +163,22 @@
 								"id": 1
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 88,
 								"y": 38,
@@ -178,6 +210,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 88,
 								"y": 52,
@@ -209,6 +257,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 104,
 								"y": 52,
@@ -472,6 +536,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 104,
 								"y": 106,
@@ -503,6 +583,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 88,
 								"y": 106,
@@ -534,6 +630,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 120,
 								"y": 106,
@@ -739,6 +851,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 136,
 								"y": 106,
@@ -770,6 +898,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 122,
 								"y": 52,
@@ -801,6 +945,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 138,
 								"y": 38,
@@ -832,6 +992,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 138,
 								"y": 52,
@@ -863,6 +1039,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 154,
 								"y": 52,
@@ -929,6 +1121,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 86,
 								"y": 46,
@@ -960,6 +1168,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 102,
 								"y": 32,
@@ -991,6 +1215,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 102,
 								"y": 46,
@@ -1022,6 +1262,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 118,
 								"y": 46,
@@ -1053,6 +1309,22 @@
 								"id": 0
 							},
 							"behaviors": {},
+							"effects": {
+								"BetterOutline": {
+									"isEnabled": true,
+									"parameters": {
+										"color": [
+											0,
+											0,
+											0,
+											1
+										],
+										"width": 1,
+										"precision-step": 1,
+										"samples": 16
+									}
+								}
+							},
 							"world": {
 								"x": 102,
 								"y": 106,
@@ -1116,6 +1388,22 @@
 						"id": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BetterOutline": {
+							"isEnabled": true,
+							"parameters": {
+								"color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"width": 1,
+								"precision-step": 1,
+								"samples": 16
+							}
+						}
+					},
 					"world": {
 						"x": 104,
 						"y": 70,
@@ -1147,6 +1435,22 @@
 						"id": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BetterOutline": {
+							"isEnabled": true,
+							"parameters": {
+								"color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"width": 1,
+								"precision-step": 1,
+								"samples": 16
+							}
+						}
+					},
 					"world": {
 						"x": 112,
 						"y": 124,
@@ -1294,6 +1598,22 @@
 						"id": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BetterOutline": {
+							"isEnabled": true,
+							"parameters": {
+								"color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"width": 1,
+								"precision-step": 1,
+								"samples": 16
+							}
+						}
+					},
 					"world": {
 						"x": 112,
 						"y": 88,
