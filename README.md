@@ -6,6 +6,7 @@ Play it on [Newgrounds](https://www.newgrounds.com/portal/view/926208), [itch.io
 Made in 72 hours for [Ludum Dare 55](https://ldjam.com/events/ludum-dare/55/scummoner)!
 
 # CREDITS
+https://scum.dog/ \
 Liam Stone - Programming, Art, Sounds\
 Filippo Meozzi - Director, Sounds\
 your - Art, Design\
