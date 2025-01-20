@@ -1,7 +1,7 @@
 # ABOUT
 Scummoner is a sandbox game where you summon things to ruin lives.
 
-Play it on [Newgrounds](https://www.newgrounds.com/portal/view/926208), [itch.io](https://bobatealee.itch.io/scummoner), or [my website](https://bobatealee.com/games/scummoner/)!
+Play it on [Newgrounds](https://www.newgrounds.com/portal/view/926208), [itch.io](https://bobatealee.itch.io/scummoner), or on [scum.dog](https://scum.dog/games/scummoner)!
 
 Made in 72 hours for [Ludum Dare 55](https://ldjam.com/events/ludum-dare/55/scummoner)!
 
